@@ -78,3 +78,32 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+
+
+
+
+Route::filter('admin', function(Illuminate\Routing\Route $route)  {
+
+	if($route->getAction()) {
+		$params = $route->getParameters() + array('id' => current($route->getParameters()));
+		$content = App::make('DeSmart\Layout\Layout')->dispatch($route->getAction(), $params);
+		return View::make('admin::layouts.admin', compact('content'));
+	}
+
+});
+
+
+Route::filter('dashboard', function() {
+
+	$apps = App::make('Admin\App')->all();
+	$config = array();
+
+	foreach($apps as $app) {
+		$config[] = $app->toArray();
+	}
+
+	Config::set('admin::dashboard', $config);
+
+});

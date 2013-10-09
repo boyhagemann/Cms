@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"boyhagemann/admin": "dev-master",
-		"boyhagemann/crud": "dev-master"
+		"boyhagemann/crud": "dev-master",
+		"boyhagemann/blocks": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
