@@ -4,7 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/laravel": "dev-master",
+		"laravel/framework": "4.0.*",
 		"boyhagemann/admin": "dev-master",
 		"boyhagemann/crud": "dev-master"
 	},
