@@ -1,5 +1,7 @@
 <?php
 
+use Zend\Http\Client;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,7 +13,13 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', array('as' => 'home', function()
 {
-	return View::make('hello');
-});
+
+}));
+
+
+
+Route::when('admin', 'dashboard');
+Route::when('admin/*', 'admin');
+

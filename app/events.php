@@ -1,0 +1,86 @@
+<?php
+
+Event::listen('*', function($object)
+{
+	if($object instanceof Boyhagemann\Crud\CrudController) {
+
+		if(Request::getMethod() != 'GET') {
+			return;
+		}
+
+		$key = 'admin::navigation.' . Route::currentRouteName();
+
+		if(!Config::get($key)) {
+
+			$name = $object->getModelBuilder()->getName();
+			$baseRoute = $object->getBaseRoute();
+
+			$navigation = array(
+				$baseRoute . '.index' => array(
+					'menuLeft' => array(
+						array(
+							'route' => 'admin',
+							'label' => 'Dashboard',
+						),
+					),
+					'menuRight' => array(
+						array(
+							'route' => $baseRoute . '.create',
+							'label' => 'Create',
+						),
+					),
+				),
+				$baseRoute . '.edit' => array(
+					'menuLeft' => array(
+						array(
+							'route' => $baseRoute . '.index',
+							'label' => $name,
+						),
+					),
+					'menuRight' => array(
+						array(
+							'method' => 'delete',
+							'route' => $baseRoute . '.destroy',
+							'label' => 'Delete',
+						),
+					),
+				),
+				$baseRoute . '.create' => array(
+					'menuLeft' => array(
+						array(
+							'route' => $baseRoute . '.index',
+							'label' => $name,
+						),
+					),
+				),
+			);
+
+			Config::set($key, $navigation[Route::currentRouteName()]);
+
+		}
+
+	}
+});
+
+Event::listen('crudController.init', function(Boyhagemann\Crud\CrudController $controller) {
+
+	if(!$controller->getFormBuilder()->getElements()) {
+
+		View::composer('layouts.default', function($layout) {
+			$layout->content = View::make('message.form');
+		});
+	}
+
+});
+
+Event::listen('modelBuilder.generator.export', function(Illuminate\Database\Schema\Blueprint $blueprint) {
+
+	if($blueprint->getColumns()) {
+		foreach($blueprint->getColumns() as $column) {
+			$info[] = sprintf('<li><strong>%s</strong> (%s:%d)</li>', $column->name, $column->type, $column->length);
+		}
+
+		$message = sprintf('Columns added to table <strong>%s</strong>: <ul>%s</ul>', $blueprint->getTable(), implode('', $info));
+		Session::flash('info', $message);
+	}
+});

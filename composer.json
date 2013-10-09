@@ -4,7 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"boyhagemann/framework": "dev-master"
+		"boyhagemann/admin": "dev-master",
+		"boyhagemann/crud": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -18,7 +19,7 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
-			"php artisan optimize"
+			"php artisan optimize",
 		],
 		"pre-update-cmd": [
 			"php artisan clear-compiled"
