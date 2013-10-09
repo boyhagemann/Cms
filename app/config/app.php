@@ -115,6 +115,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Boyhagemann\Admin\AdminServiceProvider',
+		'Boyhagemann\Crud\CrudServiceProvider',
 
 	),
 

@@ -23,3 +23,19 @@ Route::get('/', array('as' => 'home', function()
 Route::when('admin', 'dashboard');
 Route::when('admin/*', 'admin');
 
+Route::filter('dashboard', function() {
+
+	$apps = App::make('Admin\App')->all();
+	$config = array();
+
+	foreach($apps as $app) {
+		$config[] = $app->toArray();
+	}
+
+	Config::set('admin::dashboard', $config);
+
+});
+
+
+Route::resource('admin/apps', 'Admin\AppController');
+
