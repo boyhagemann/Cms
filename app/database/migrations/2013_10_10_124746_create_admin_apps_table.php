@@ -12,9 +12,13 @@ class CreateAdminAppsTable extends Migration {
 	 */
 	public function up()
 	{
-		$controller = App::make('Admin\AppController');
-		$controller->init('index');
-		$controller->getModelBuilder()->autoGenerate()->build();
+		Schema::create('admin_apps', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->timestamps();
+			$table->text('title');
+			$table->text('route');
+		});
 	}
 
 	/**
@@ -24,10 +28,7 @@ class CreateAdminAppsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('admin_app', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('admin_apps');
 	}
 
 }

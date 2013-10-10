@@ -4,7 +4,7 @@ class AdminAppTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('admin_app')->delete();
+		DB::table('admin_apps')->delete();
 
 		Admin\App::create(array(
 			'title' => 'Apps',

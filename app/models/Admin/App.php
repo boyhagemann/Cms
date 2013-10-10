@@ -7,7 +7,7 @@ use Eloquent;
 class App extends Eloquent
 {
 
-    protected $table = 'admin_app';
+    protected $table = 'admin_apps';
 
     public $timestamps = true;
 

@@ -24,8 +24,7 @@ class AppController extends CrudController
      */
     public function buildModel(ModelBuilder $mb)
     {
-        $mb->name('Admin\App')->table('admin_app');
-        $mb->autoGenerate();
+        $mb->name('Admin\App')->table('admin_apps');
     }
 
     /**
