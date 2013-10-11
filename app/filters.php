@@ -89,6 +89,7 @@ Route::filter('admin', function(Illuminate\Routing\Route $route)  {
 	if(!$route->getAction()) {
 		return;
 	}
+
 	$params = $route->getParameters() + array('id' => current($route->getParameters()));
 	$content = App::make('DeSmart\Layout\Layout')->dispatch($route->getAction(), $params);
 	return View::make('layouts.admin', compact('content'));
@@ -98,7 +99,7 @@ Route::filter('admin', function(Illuminate\Routing\Route $route)  {
 
 Route::filter('dashboard', function() {
 
-	$apps = App::make('Admin\App')->all();
+	$apps = App::make('Boyhagemann\Admin\Model\App')->all();
 	$config = array();
 
 	foreach($apps as $app) {

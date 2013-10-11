@@ -1,66 +1,5 @@
 <?php
 
-Event::listen('*', function($object)
-{
-	if($object instanceof Boyhagemann\Crud\CrudController) {
-
-		if(Request::getMethod() != 'GET') {
-			return;
-		}
-
-		$key = 'admin::navigation.' . Route::currentRouteName();
-
-		if(!Config::get($key)) {
-
-			$name = $object->getModelBuilder()->getName();
-			$baseRoute = $object->getBaseRoute();
-
-			$navigation = array(
-				$baseRoute . '.index' => array(
-					'menuLeft' => array(
-						array(
-							'route' => 'admin',
-							'label' => 'Dashboard',
-						),
-					),
-					'menuRight' => array(
-						array(
-							'route' => $baseRoute . '.create',
-							'label' => 'Create',
-						),
-					),
-				),
-				$baseRoute . '.edit' => array(
-					'menuLeft' => array(
-						array(
-							'route' => $baseRoute . '.index',
-							'label' => $name,
-						),
-					),
-					'menuRight' => array(
-						array(
-							'method' => 'delete',
-							'route' => $baseRoute . '.destroy',
-							'label' => 'Delete',
-						),
-					),
-				),
-				$baseRoute . '.create' => array(
-					'menuLeft' => array(
-						array(
-							'route' => $baseRoute . '.index',
-							'label' => $name,
-						),
-					),
-				),
-			);
-
-			Config::set($key, $navigation[Route::currentRouteName()]);
-
-		}
-
-	}
-});
 
 Event::listen('crudController.init', function(Boyhagemann\Crud\CrudController $controller) {
 
@@ -74,6 +13,59 @@ Event::listen('crudController.init', function(Boyhagemann\Crud\CrudController $c
 	// Change the title of the App controller
 	if($controller instanceof Boyhagemann\Admin\Controller\AppController) {
 		Config::set('crud::config.title', 'Apps');
+	}
+
+
+
+	$key = 'admin::navigation.' . Route::currentRouteName();
+
+	if(!Config::get($key)) {
+
+		$name = $controller->getModelBuilder()->getName();
+		$baseRoute = $controller->getBaseRoute();
+
+		$navigation = array(
+			$baseRoute . '.index' => array(
+				'menuLeft' => array(
+					array(
+						'route' => 'admin',
+						'label' => 'Dashboard',
+					),
+				),
+				'menuRight' => array(
+					array(
+						'route' => $baseRoute . '.create',
+						'label' => 'Create',
+					),
+				),
+			),
+			$baseRoute . '.edit' => array(
+				'menuLeft' => array(
+					array(
+						'route' => $baseRoute . '.index',
+						'label' => $name,
+					),
+				),
+				'menuRight' => array(
+					array(
+						'method' => 'delete',
+						'route' => $baseRoute . '.destroy',
+						'label' => 'Delete',
+					),
+				),
+			),
+			$baseRoute . '.create' => array(
+				'menuLeft' => array(
+					array(
+						'route' => $baseRoute . '.index',
+						'label' => $name,
+					),
+				),
+			),
+		);
+
+		Config::set($key, $navigation[Route::currentRouteName()]);
+
 	}
 
 });
