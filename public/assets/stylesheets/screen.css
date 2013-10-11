@@ -1,0 +1,36 @@
+body {
+	padding-bottom: 70px;
+}
+
+
+ul.dashboard {
+	list-style: none;
+	padding: 0;
+}
+ul.dashboard li {
+	float: left;
+	margin: 15px;
+	width: 128px;
+}
+ul.dashboard li a{
+	display: inline-block; /* Fix for clickability issue in WebKit */
+	color: #666;
+	text-align: center;
+}
+ul.dashboard li a span:last-child {
+	display: block;
+	margin-top: 10px;
+}
+ul.dashboard li a span:before {
+	font-size: 128px;
+	color: #ccc;
+}
+
+
+ul.dashboard li a:hover {
+	text-decoration: none;
+	color: #000;
+}
+ul.dashboard li a:hover span:before {
+	color: #357ebd;
+}

@@ -86,11 +86,12 @@ Route::filter('csrf', function()
 
 Route::filter('admin', function(Illuminate\Routing\Route $route)  {
 
-	if($route->getAction()) {
-		$params = $route->getParameters() + array('id' => current($route->getParameters()));
-		$content = App::make('DeSmart\Layout\Layout')->dispatch($route->getAction(), $params);
-		return View::make('admin::layouts.admin', compact('content'));
+	if(!$route->getAction()) {
+		return;
 	}
+	$params = $route->getParameters() + array('id' => current($route->getParameters()));
+	$content = App::make('DeSmart\Layout\Layout')->dispatch($route->getAction(), $params);
+	return View::make('layouts.admin', compact('content'));
 
 });
 

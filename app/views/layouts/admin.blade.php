@@ -15,9 +15,8 @@
 
 	<!-- CSS
 	================================================== -->
-	<link href="{{{ URL::asset('css/bootstrap.min.css') }}}" rel="stylesheet">
-	<link href="{{{ URL::asset('css/fonts.css') }}}" rel="stylesheet">
-	<link href="{{{ URL::asset('css/screen.css') }}}" rel="stylesheet">
+	@stylesheets('application', 'admin')
+	@javascripts('application', 'admin')
 
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->

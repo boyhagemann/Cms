@@ -114,6 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Basset\BassetServiceProvider',
 		'Boyhagemann\Admin\AdminServiceProvider',
 		'Boyhagemann\Crud\CrudServiceProvider',
 
@@ -182,6 +183,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
+		'Basset' 		  => 'Basset\Facade',
 	),
 
 );
