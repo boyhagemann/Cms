@@ -18,6 +18,7 @@ class CreateAdminAppsTable extends Migration {
 			$table->timestamps();
 			$table->text('title');
 			$table->text('route');
+			$table->text('icon_class');
 		});
 	}
 

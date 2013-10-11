@@ -18,12 +18,12 @@ Route::get('/', array('as' => 'home', function()
 
 
 
-Route::when('admin', 'dashboard');
+Route::when('admin', array('dashboard','admin'));
 Route::when('admin/*', 'admin');
 
 Route::filter('dashboard', function() {
 
-	$apps = App::make('Admin\App')->all();
+	$apps = App::make('Boyhagemann\Admin\Model\App')->all();
 	$config = array();
 
 	foreach($apps as $app) {
@@ -35,5 +35,4 @@ Route::filter('dashboard', function() {
 });
 
 
-Route::resource('admin/apps', 'Admin\AppController');
-
+Route::resource('admin/apps', 'Boyhagemann\Admin\Controller\AppController');

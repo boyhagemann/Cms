@@ -71,6 +71,11 @@ Event::listen('crudController.init', function(Boyhagemann\Crud\CrudController $c
 		});
 	}
 
+	// Change the title of the App controller
+	if($controller instanceof Boyhagemann\Admin\Controller\AppController) {
+		Config::set('crud::config.title', 'Apps');
+	}
+
 });
 
 Event::listen('modelBuilder.generator.export', function(Illuminate\Database\Schema\Blueprint $blueprint) {

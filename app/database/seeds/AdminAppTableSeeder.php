@@ -9,6 +9,7 @@ class AdminAppTableSeeder extends Seeder {
 		Admin\App::create(array(
 			'title' => 'Apps',
 			'route' => 'admin.apps.index',
+			'icon_class' => 'icon'
 		));
 
 		Admin\App::create(array(
