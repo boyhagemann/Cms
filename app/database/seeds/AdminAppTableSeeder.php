@@ -11,12 +11,13 @@ class AdminAppTableSeeder extends Seeder {
 		AdminApp::create(array(
 			'title' => 'Apps',
 			'route' => 'admin.apps.index',
-			'icon_class' => 'icon'
+			'icon_class' => 'icon-th-large'
 		));
 
 		AdminApp::create(array(
 			'title' => 'Create a new resource',
 			'route' => 'admin.crud.create',
+			'icon_class' => 'icon-upload-2'
 		));
 	}
 
