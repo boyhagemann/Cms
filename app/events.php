@@ -19,6 +19,10 @@ Event::listen('crudController.init', function(Boyhagemann\Crud\CrudController $c
 
 	$key = 'admin::navigation.' . Route::currentRouteName();
 
+	if(Request::getMethod() != 'GET') {
+		return;
+	}
+
 	if(!Config::get($key)) {
 
 		$name = $controller->getModelBuilder()->getName();
