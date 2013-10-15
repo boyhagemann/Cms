@@ -16,7 +16,7 @@ class AdminAppTableSeeder extends Seeder {
 
 		AdminApp::create(array(
 			'title' => 'Create a new resource',
-			'route' => 'admin.crud.create',
+			'route' => 'admin.resources.create',
 			'icon_class' => 'icon-upload-2'
 		));
 	}

@@ -117,6 +117,7 @@ return array(
 		'Basset\BassetServiceProvider',
 		'Boyhagemann\Admin\AdminServiceProvider',
 		'Boyhagemann\Crud\CrudServiceProvider',
+		'Boyhagemann\Pages\PagesServiceProvider',
 
 	),
 

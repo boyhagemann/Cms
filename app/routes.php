@@ -21,18 +21,3 @@ Route::get('/', array('as' => 'home', function()
 Route::when('admin', array('dashboard','admin'));
 Route::when('admin/*', 'admin');
 
-Route::filter('dashboard', function() {
-
-	$apps = App::make('Boyhagemann\Admin\Model\App')->all();
-	$config = array();
-
-	foreach($apps as $app) {
-		$config[] = $app->toArray();
-	}
-
-	Config::set('admin::dashboard', $config);
-
-});
-
-
-Route::resource('admin/apps', 'Boyhagemann\Admin\Controller\AppController');

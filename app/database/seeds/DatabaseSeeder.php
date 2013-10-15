@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder {
 
 		 $this->call('AdminAppTableSeeder');
 		 $this->call('ResourcesTableSeeder');
+		 $this->call('LayoutsTableSeeder');
+		 $this->call('BlocksTableSeeder');
+		 $this->call('PagesTableSeeder');
 	}
 
 }
