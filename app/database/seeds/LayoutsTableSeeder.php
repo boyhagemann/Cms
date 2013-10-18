@@ -12,6 +12,11 @@ class LayoutsTableSeeder extends Seeder {
 			'title' => 'Admin',
 			'name' => 'admin::layouts.admin',
 		));
+
+		Layout::create(array(
+			'title' => 'Default',
+			'name' => 'layouts.default',
+		));
 	}
 
 }
