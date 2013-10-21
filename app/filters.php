@@ -82,6 +82,19 @@ Route::filter('csrf', function()
 
 
 
+Route::filter('content', function(Illuminate\Routing\Route $route) {
+
+	$alias = Route::currentRouteName();
+	$method = Str::lower(Request::getMethod());
+	$page = Boyhagemann\Pages\Model\Page::whereAlias($alias)->whereMethod($method)->first();
+
+	if($page) {
+		$view = App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\ContentController@renderPage', compact('page'));
+		return $view;
+		dd($view);
+	}
+
+});
 
 
 Route::filter('admin', function(Illuminate\Routing\Route $route)  {

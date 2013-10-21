@@ -118,6 +118,7 @@ return array(
 		'Boyhagemann\Admin\AdminServiceProvider',
 		'Boyhagemann\Crud\CrudServiceProvider',
 		'Boyhagemann\Pages\PagesServiceProvider',
+		'Boyhagemann\Content\ContentServiceProvider',
 
 	),
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesTable extends Migration {
+class CreateSectionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreatePagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('pages', function(Blueprint $table)
+		Schema::create('sections', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('title');
-			$table->string('route');
-			$table->string('method');
+			$table->text('title');
+			$table->text('name');
 			$table->integer('layout_id');
-			$table->string('controller');
+
+			$table->index('layout_id');
 		});
 	}
 
@@ -31,7 +31,7 @@ class CreatePagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('pages');
+		Schema::drop('sections');
 	}
 
 }

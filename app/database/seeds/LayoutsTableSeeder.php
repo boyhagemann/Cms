@@ -9,11 +9,13 @@ class LayoutsTableSeeder extends Seeder {
 		DB::table('layouts')->delete();
 
 		Layout::create(array(
+			'id' => 1,
 			'title' => 'Admin',
-			'name' => 'admin::layouts.admin',
+			'name' => 'layouts.admin',
 		));
 
 		Layout::create(array(
+			'id' => 2,
 			'title' => 'Default',
 			'name' => 'layouts.default',
 		));

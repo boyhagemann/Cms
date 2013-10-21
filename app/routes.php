@@ -18,6 +18,7 @@ Route::get('/', array('as' => 'home', function()
 
 
 
+Route::when('*', array('content'));
 Route::when('admin', array('dashboard','admin'));
 Route::when('admin/*', 'admin');
 
