@@ -18,6 +18,9 @@ class CreateLayoutsTable extends Migration {
 			$table->timestamps();
 			$table->text('title');
 			$table->text('name');
+                        $table->integer('main_section_id');
+                        
+                        $table->index('main_section_id');
 		});
 	}
 

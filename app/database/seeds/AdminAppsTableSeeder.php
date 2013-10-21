@@ -23,13 +23,13 @@ class AdminAppsTableSeeder extends Seeder {
 		AdminApp::create(array(
 			'title' => 'Pages',
 			'route' => 'admin.pages.index',
-			'icon_class' => 'icon-page'
+			'icon_class' => 'icon-file'
 		));
 
 		AdminApp::create(array(
 			'title' => 'Blocks',
 			'route' => 'admin.blocks.index',
-			'icon_class' => 'icon-page'
+			'icon_class' => 'icon-file'
 		));
 	}
 

@@ -21,6 +21,7 @@ class CreatePagesTable extends Migration {
 			$table->string('method');
 			$table->integer('layout_id');
 			$table->string('controller');
+			$table->string('alias');
 		});
 	}
 
