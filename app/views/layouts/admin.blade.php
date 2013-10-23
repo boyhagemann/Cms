@@ -76,11 +76,15 @@
 	<div class="row">
 
 		<div class="col-lg-9">{{ $content }}</div>
+		<div class="col-lg-3">{{ $sidebar }}</div>
 	</div>
 
 
 </div>
+
 <!-- ./ container -->
+
+{{ $tools }}
 
 <!-- Javascripts
 ================================================== -->

@@ -21,17 +21,17 @@ class PagesTableSeeder extends Seeder {
 			'controller' => 'Boyhagemann\Content\Controller\ManageController@toolbar',
 			'global' => 1,
 			'page_id' => $page->id,
-			'section_id' => 1,
+			'section_id' => 4, // Tools
 		));
 
-//		Page::create(array(
-//			'title' => 'Admin',
-//			'route' => 'admin',
-//			'controller' => 'Boyhagemann\Admin\Controller\IndexController@dashboard',
-//			'method' => 'get',
-//			'alias' => 'admin',
-//			'layout_id' => 1,
-//		));
+		Page::create(array(
+			'title' => 'Admin',
+			'route' => 'admin',
+			'controller' => 'Boyhagemann\Admin\Controller\IndexController@dashboard',
+			'method' => 'get',
+			'alias' => 'admin',
+			'layout_id' => 1,
+		));
 	}
 
 }
