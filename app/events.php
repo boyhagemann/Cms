@@ -68,6 +68,10 @@ Event::listen('crudController.init', function(Boyhagemann\Crud\CrudController $c
 			),
 		);
 
+		if(!isset($navigation[Route::currentRouteName()])) {
+			return;
+		}
+
 		Config::set($key, $navigation[Route::currentRouteName()]);
 
 	}

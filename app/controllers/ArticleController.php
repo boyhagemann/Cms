@@ -9,7 +9,7 @@ class ArticleController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return '<h3>News list</h3>';
 	}
 
 	/**

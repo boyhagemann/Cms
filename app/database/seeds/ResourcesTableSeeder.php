@@ -27,6 +27,11 @@ class ResourcesTableSeeder extends Seeder {
 			'title' => 'Block',
 			'controller' => 'Boyhagemann\Content\Controller\BlockController',
 		));
+
+		Resource::create(array(
+			'title' => 'Content',
+			'controller' => 'Boyhagemann\Content\Controller\ContentController',
+		));
 	}
 
 }

@@ -89,7 +89,7 @@ Route::filter('content', function(Illuminate\Routing\Route $route) {
 	$page = Boyhagemann\Pages\Model\Page::whereAlias($alias)->whereMethod($method)->first();
 
 	if($page) {
-		$view = App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\ContentController@renderPage', compact('page'));
+		$view = App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\DispatchController@renderPage', compact('page'));
 		return $view;
 		dd($view);
 	}
