@@ -10,7 +10,7 @@ class InstallCommand extends Command {
 	 *
 	 * @var string
 	 */
-	protected $name = 'install';
+	protected $name = 'cms:install';
 
 	/**
 	 * The console command description.

@@ -7,8 +7,6 @@
 		"laravel/framework": "4.0.*",
 		"jasonlewis/basset": "dev-master",
 		"boyhagemann/admin": "dev-master",
-		"boyhagemann/crud": "dev-master",
-		"boyhagemann/blocks": "dev-master",
 		"boyhagemann/pages": "dev-master",
 		"boyhagemann/content": "dev-master"
 	},
