@@ -35,6 +35,13 @@ class SectionsTableSeeder extends Seeder {
 			'name' => 'tools',
 			'layout_id' => 1,
 		));
+
+		Section::create(array(
+			'id' => 5,
+			'title' => 'Tools',
+			'name' => 'tools',
+			'layout_id' => 2,
+		));
 	}
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-use Boyhagemann\Pages\Model\Block;
+use Boyhagemann\Content\Model\Block;
 
 class BlocksTableSeeder extends Seeder {
 
@@ -9,8 +9,13 @@ class BlocksTableSeeder extends Seeder {
 		DB::table('blocks')->delete();
 
 		Block::create(array(
-			'title' => 'Page overview',
-			'controller' => 'Boyhagemann\Pages\Controller\PageController@index',
+			'title' => 'Text',
+			'controller' => 'Boyhagemann\Text\Controller\TextController@textarea',
+		));
+
+		Block::create(array(
+			'title' => 'Heading',
+			'controller' => 'Boyhagemann\Text\Controller\TextController@heading',
 		));
 	}
 

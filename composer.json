@@ -8,7 +8,8 @@
 		"jasonlewis/basset": "dev-master",
 		"boyhagemann/admin": "dev-master",
 		"boyhagemann/pages": "dev-master",
-		"boyhagemann/content": "dev-master"
+		"boyhagemann/content": "dev-master",
+		"boyhagemann/text": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

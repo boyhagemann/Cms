@@ -119,6 +119,7 @@ return array(
 		'Boyhagemann\Crud\CrudServiceProvider',
 		'Boyhagemann\Pages\PagesServiceProvider',
 		'Boyhagemann\Content\ContentServiceProvider',
+		'Boyhagemann\Text\TextServiceProvider',
 
 	),
 

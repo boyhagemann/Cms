@@ -30,41 +30,6 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
-		<ul class="nav navbar-nav">
-			@if(isset($menuLeft))
-			@foreach($menuLeft as $item)
-			<li>
-				@if($item['method'] == 'get')
-				<a href="{{ URL::route($item['route'], $item['params']) }}">{{ $item['label'] }}</a>
-				@else
-				{{ Form::open($item['form']) }}
-				{{ Form::submit($item['label']) }}
-				{{ Form::close() }}
-				@endif
-			</li>
-			@endforeach
-			@endif
-		</ul>
-		<ul class="nav navbar-nav pull-right">
-			@if(isset($menuRight))
-			@foreach($menuRight as $item)
-			<li>
-				@if($item['method'] == 'get')
-				<a href="{{ URL::route($item['route'], $item['params']) }}">{{ $item['label'] }}</a>
-				@else
-				{{ Form::open($item['form']) }}
-				{{ Form::submit($item['label']) }}
-				{{ Form::close() }}
-				@endif
-			</li>
-			@endforeach
-			@endif
-		</ul>
-	</div>
-</nav>
-
 <!-- Container -->
 <div class="container">
 
@@ -76,7 +41,6 @@
 	<div class="row">
 
 		<div class="col-lg-9">{{ $content }}</div>
-		<div class="col-lg-3">{{ $sidebar }}</div>
 	</div>
 
 

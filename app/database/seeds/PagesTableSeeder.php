@@ -15,6 +15,7 @@ class PagesTableSeeder extends Seeder {
 		Page::createResourcePages('Block', 'Boyhagemann\Content\Controller\BlockController', 'admin/blocks', 'layouts.admin');
 		Page::createResourcePages('Content', 'Boyhagemann\Content\Controller\ContentController', 'admin/content', 'layouts.admin');
 
+		$page = Page::createWithContent('Home', '/', 'Boyhagemann\Admin\Controller\IndexController@dashboard', 'layouts.default');
 		$page = Page::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\IndexController@dashboard', 'layouts.admin');
 
 		Content::create(array(
@@ -24,14 +25,6 @@ class PagesTableSeeder extends Seeder {
 			'section_id' => 4, // Tools
 		));
 
-		Page::create(array(
-			'title' => 'Admin',
-			'route' => 'admin',
-			'controller' => 'Boyhagemann\Admin\Controller\IndexController@dashboard',
-			'method' => 'get',
-			'alias' => 'admin',
-			'layout_id' => 1,
-		));
 	}
 
 }
