@@ -187,6 +187,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Basset' 		  => 'Basset\Facade',
+		'Layout' 		  => 'DeSmart\Layout\Facades\Layout',
 	),
 
 );

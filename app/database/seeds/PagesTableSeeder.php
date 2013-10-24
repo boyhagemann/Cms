@@ -17,6 +17,8 @@ class PagesTableSeeder extends Seeder {
 
 		$page = Page::createWithContent('Home', '/', 'Boyhagemann\Admin\Controller\IndexController@dashboard', 'layouts.default');
 		$page = Page::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\IndexController@dashboard', 'layouts.admin');
+		$page = Page::createWithContent('Content config form', 'admin/content/config-form/{content}', 'Boyhagemann\Content\Controller\ContentController@configForm', 'layouts.admin', 'GET', 'admin.content.config.form');
+		$page = Page::createWithContent('Content config update', 'admin/content/config-update/{content}', 'Boyhagemann\Content\Controller\ContentController@configUpdate', 'layouts.admin', 'POST', 'admin.content.config.update');
 
 		Content::create(array(
 			'controller' => 'Boyhagemann\Content\Controller\ManageController@toolbar',
