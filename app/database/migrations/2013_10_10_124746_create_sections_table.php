@@ -17,10 +17,9 @@ class CreateSectionsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->text('title');
-			$table->text('name');
-			$table->integer('layout_id');
+			$table->string('name');
 
-			$table->index('layout_id');
+			$table->index('name');
 		});
 	}
 
