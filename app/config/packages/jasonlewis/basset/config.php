@@ -51,6 +51,7 @@ return array(
             // Switch to the javascripts directory and require the "coffeescript" directory. As
             // with the above directories we'll apply the CoffeeScript filter to the directory
             // so the built collection contains valid JS.
+			$collection->javascript('jquery');
             $directory = $collection->directory('assets/javascripts', function($collection)
             {
                 $collection->requireDirectory('coffeescripts')->apply('CoffeeScript');
@@ -170,7 +171,9 @@ return array(
 
     'aliases' => array(
 
-        'assets' => array(),
+        'assets' => array(
+			'jquery' => 'assets/js/jquery-1.10.2-min.js',
+		),
 
         'filters' => array(
 

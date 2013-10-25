@@ -13,14 +13,12 @@ class LayoutsTableSeeder extends Seeder
             'id' => 1,
             'title' => 'Admin',
             'name' => 'layouts.admin',
-            'main_section_id' => 1,
         ));
 
         Layout::create(array(
             'id' => 2,
             'title' => 'Default',
             'name' => 'layouts.default',
-            'main_section_id' => 2,
         ));
     }
 

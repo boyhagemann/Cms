@@ -16,7 +16,6 @@
 	<!-- CSS
 	================================================== -->
 	@stylesheets('application', 'admin')
-	@javascripts('application', 'admin')
 
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -88,6 +87,8 @@
 
 <!-- Javascripts
 ================================================== -->
+@javascripts('application', 'admin')
+
 </body>
 </html>
 

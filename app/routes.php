@@ -10,15 +10,5 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::get('/', array('as' => 'home', function()
-{
-
-}));
-
-
-
 Route::when('*', array('content'));
-Route::when('admin', array('dashboard','admin'));
-Route::when('admin/*', 'admin');
 
