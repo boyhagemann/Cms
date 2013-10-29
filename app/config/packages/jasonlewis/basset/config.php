@@ -30,10 +30,13 @@ return array(
 
         'application' => function($collection)
         {
-			$packages = $collection->requireDirectory('packages/boyhagemann/content/css');
-
-			$packages->apply('CssMin');
-			$packages->apply('UriRewriteFilter');
+        
+            $packages = $collection->requireDirectory('assets/stylesheets');
+            $packages->apply('CssMin');
+            $packages->apply('UriRewriteFilter');
+            
+            
+            
 
             // Switch to the stylesheets directory and require the "less" and "sass" directories.
             // These directories both have a filter applied to them so that the built
@@ -51,7 +54,7 @@ return array(
             // Switch to the javascripts directory and require the "coffeescript" directory. As
             // with the above directories we'll apply the CoffeeScript filter to the directory
             // so the built collection contains valid JS.
-			$collection->javascript('jquery');
+	    $collection->javascript('jquery');
             $directory = $collection->directory('assets/javascripts', function($collection)
             {
                 $collection->requireDirectory('coffeescripts')->apply('CoffeeScript');

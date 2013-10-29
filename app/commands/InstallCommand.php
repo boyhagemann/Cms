@@ -48,6 +48,8 @@ class InstallCommand extends Command {
 
 		$this->call('migrate');
 		$this->call('db:seed');
+                $this->call('asset:publish', array('--bench' => 'boyhagemann/content'));
+                $this->call('basset:build');
 
 		$this->info('Done!');
 	}
@@ -57,7 +59,7 @@ class InstallCommand extends Command {
 	 */
 	protected function writeLocalDatabaseConfigFile($database)
 	{
-		$this->info('Writing local database configuration file');
+		$this->info('Writing local - configuration file');
 
 		$template = "<?php
 

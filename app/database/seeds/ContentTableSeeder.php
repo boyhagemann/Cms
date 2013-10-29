@@ -8,7 +8,7 @@ class ContentTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('content')->delete();
+            DB::table('content')->delete();
 	}
 
 }
