@@ -31,7 +31,7 @@ return array(
         'application' => function($collection)
         {
         
-            $packages = $collection->requireDirectory('assets/stylesheets');
+            $packages = $collection->requireTree('assets/stylesheets');
             $packages->apply('CssMin');
             $packages->apply('UriRewriteFilter');
             
