@@ -16,8 +16,8 @@ class CreateBlocksTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
-			$table->text('title');
-			$table->text('controller');
+			$table->string('title');
+			$table->string('controller');
 		});
 	}
 

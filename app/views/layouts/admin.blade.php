@@ -31,6 +31,9 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
+
+		{{ $navbar }}
+
 		<ul class="nav navbar-nav">
 			@if(isset($menuLeft))
 			@foreach($menuLeft as $item)

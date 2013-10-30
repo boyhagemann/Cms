@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminAppsTable extends Migration {
+class CreateNavigationContainersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,12 @@ class CreateAdminAppsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('admin_apps', function(Blueprint $table)
+		Schema::create('navigation_containers', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('title');
-			$table->string('route');
-			$table->string('icon_class');
+			$table->string('name');
 		});
 	}
 
@@ -29,7 +28,7 @@ class CreateAdminAppsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('admin_apps');
+		Schema::drop('navigation_containers');
 	}
 
 }

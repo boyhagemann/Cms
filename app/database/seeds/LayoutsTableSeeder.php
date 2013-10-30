@@ -20,6 +20,7 @@ class LayoutsTableSeeder extends Seeder
             SectionsTableSeeder::CONTENT,
             SectionsTableSeeder::SIDEBAR,
             SectionsTableSeeder::TOOLS,
+            SectionsTableSeeder::NAVBAR,
         ));
         $admin->save();
 

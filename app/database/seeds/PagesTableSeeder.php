@@ -26,20 +26,20 @@ class PagesTableSeeder extends Seeder {
 		$configUpdate   = Page::createWithContent('Content config update', 'admin/content/config-update/{content}', 'Boyhagemann\Content\Controller\ConfigController@update', 'layouts.admin', 'POST', 'admin.content.config.update');
 
 		Content::create(array(
-                    'controller'    => 'Boyhagemann\Content\Controller\ManageController@toolbar',
-                    'global'        => 1,
-                    'page_id'       => $admin->id,
-                    'section_id'    => SectionsTableSeeder::TOOLS
+			'controller'    => 'Boyhagemann\Content\Controller\ManageController@toolbar',
+			'global'        => 1,
+			'page_id'       => $admin->id,
+			'section_id'    => SectionsTableSeeder::TOOLS
 		));
                 
-                Content::create(array(
-                    'block_id'      => BlocksTableSeeder::ID_TEXT,
-                    'page_id'       => $home->id,
-                    'section_id'    => SectionsTableSeeder::CONTENT,
-                    'params'        => array(
-                        'text' => 'Welcome!!!'
-                    ) 
-                ));
+		Content::create(array(
+			'block_id'      => BlocksTableSeeder::ID_TEXT,
+			'page_id'       => $home->id,
+			'section_id'    => SectionsTableSeeder::CONTENT,
+			'params'        => array(
+				'text' => 'Welcome!!!'
+			)
+		));
 
 	}
 

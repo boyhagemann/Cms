@@ -7,7 +7,8 @@ class SectionsTableSeeder extends Seeder {
     const CONTENT   = 1;
     const SIDEBAR   = 2;
     const TOOLS     = 3;
-    
+    const NAVBAR    = 4;
+
 	public function run()
 	{
 		DB::table('sections')->delete();
@@ -28,6 +29,12 @@ class SectionsTableSeeder extends Seeder {
 			'id' => self::TOOLS,
 			'title' => 'Tools',
 			'name' => 'tools',
+		));
+
+		Section::create(array(
+			'id' => self::NAVBAR,
+			'title' => 'Navigation bar',
+			'name' => 'navbar',
 		));
 	}
 

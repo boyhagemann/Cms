@@ -16,8 +16,8 @@ class CreateLayoutsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
-			$table->text('title');
-			$table->text('name');
+			$table->string('title');
+			$table->string('name');
 		});
 	}
 
