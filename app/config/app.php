@@ -120,6 +120,7 @@ return array(
 		'Boyhagemann\Pages\PagesServiceProvider',
 		'Boyhagemann\Content\ContentServiceProvider',
 		'Boyhagemann\Text\TextServiceProvider',
+		'Boyhagemann\Navigation\NavigationServiceProvider',
 
 	),
 
