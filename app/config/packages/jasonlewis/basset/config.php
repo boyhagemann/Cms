@@ -35,7 +35,8 @@ return array(
             $packages->apply('CssMin');
             $packages->apply('UriRewriteFilter');
             
-            
+            $fonts = $collection->requireDirectory('assets/fonts');
+            $fonts->apply('UriRewriteFilter');
             
 
             // Switch to the stylesheets directory and require the "less" and "sass" directories.

@@ -17,19 +17,19 @@ class AdminAppsTableSeeder extends Seeder {
 		AdminApp::create(array(
 			'title' => 'Create a new resource',
 			'route' => 'admin.resources.create',
-			'icon_class' => 'icon-upload-2'
+			'icon_class' => 'icon-file'
 		));
 
 		AdminApp::create(array(
 			'title' => 'Pages',
 			'route' => 'admin.pages.index',
-			'icon_class' => 'icon-file'
+			'icon_class' => 'icon-list-ul'
 		));
 
 		AdminApp::create(array(
 			'title' => 'Blocks',
 			'route' => 'admin.blocks.index',
-			'icon_class' => 'icon-file'
+			'icon_class' => 'icon-list-ul'
 		));
 	}
 
