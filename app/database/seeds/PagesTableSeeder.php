@@ -27,11 +27,19 @@ class PagesTableSeeder extends Seeder {
 
 		Content::create(array(
 			'controller'    => 'Boyhagemann\Content\Controller\ManageController@toolbar',
-			'global'        => 1,
-			'page_id'       => $admin->id,
+			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
 			'section_id'    => SectionsTableSeeder::TOOLS
 		));
-                
+
+		Content::create(array(
+			'controller'    => 'Boyhagemann\Navigation\Controller\MenuController@container',
+			'params' 		=> array(
+				'container' => 'left'
+			),
+			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
+			'section_id'    => SectionsTableSeeder::TOOLS
+		));
+
 		Content::create(array(
 			'block_id'      => BlocksTableSeeder::ID_TEXT,
 			'page_id'       => $home->id,
