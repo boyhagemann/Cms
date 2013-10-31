@@ -17,6 +17,7 @@ class PagesTableSeeder extends Seeder {
 		// Add the resource pages
 		Page::createResourcePages('Resources', 'Boyhagemann\Admin\Controller\ResourceController', 'admin/resources', 'layouts.admin');
 		Page::createResourcePages('Pages', 'Boyhagemann\Pages\Controller\PageController', 'admin/pages', 'layouts.admin');
+		Page::createResourcePages('Dashboard Apps', 'Boyhagemann\Admin\Controller\DashboardController', 'admin/dashboard', 'layouts.admin');
 		Page::createResourcePages('Blocks', 'Boyhagemann\Content\Controller\BlockController', 'admin/blocks', 'layouts.admin');
 		Page::createResourcePages('Content', 'Boyhagemann\Content\Controller\ContentController', 'admin/content', 'layouts.admin');
 		Page::createResourcePages('Layouts', 'Boyhagemann\Pages\Controller\LayoutController', 'admin/layouts', 'layouts.admin');

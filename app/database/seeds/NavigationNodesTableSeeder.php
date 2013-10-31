@@ -10,9 +10,16 @@ class NavigationNodesTableSeeder extends Seeder {
 //		DB::table('navigation_nodes')->delete();
 
 		Node::create(array(
+			'title' => 'Dashboard Apps',
+			'page_id' => Page::whereAlias('admin.dashboard.index')->first()->id,
+			'icon_class' => 'icon-th-list',
+			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
+		));
+
+		Node::create(array(
 			'title' => 'Pages',
 			'page_id' => Page::whereAlias('admin.pages.index')->first()->id,
-			'icon_class' => 'icon-th-list',
+			'icon_class' => 'icon-list-ul',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
