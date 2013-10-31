@@ -41,6 +41,7 @@
 .icon-wrench:before {
 	content: "\e605";
 }
+.icon-plus:before,
 .icon-cogs:before {
 	content: "\e606";
 }
