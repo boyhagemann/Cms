@@ -11,7 +11,7 @@ ul.dashboard {
 ul.dashboard li {
 	float: left;
 	margin: 15px;
-	width: 128px;
+	width: 64px;
 }
 ul.dashboard li a{
 	display: inline-block; /* Fix for clickability issue in WebKit */
@@ -23,7 +23,7 @@ ul.dashboard li a span:last-child {
 	margin-top: 10px;
 }
 ul.dashboard li a span:before {
-	font-size: 128px;
+	font-size: 64px;
 	color: #ccc;
 }
 

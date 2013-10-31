@@ -11,7 +11,7 @@ class AdminAppsTableSeeder extends Seeder {
 		AdminApp::create(array(
 			'title' => 'Apps',
 			'route' => 'admin.apps.index',
-			'icon_class' => 'icon-th-large'
+			'icon_class' => 'icon-th-list'
 		));
 
 		AdminApp::create(array(

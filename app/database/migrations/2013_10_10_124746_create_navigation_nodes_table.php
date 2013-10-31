@@ -19,6 +19,7 @@ class CreateNavigationNodesTable extends Migration {
 			$table->string('title');
 			$table->integer('page_id');
 			$table->integer('container_id');
+			$table->string('icon_class');
 			$table->text('params');
                                 
                         $table->integer('parent_id')->nullable();

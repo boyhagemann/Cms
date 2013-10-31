@@ -8,14 +8,14 @@ class PagesTableSeeder extends Seeder {
 	public function run()
 	{
 		DB::table('pages')->delete();
+		DB::table('navigation_nodes')->delete();
 
 		// Basic pages
 		$home   = Page::createWithContent('Home', '/', '', 'layouts.default', 'get', 'home');
-		$admin  = Page::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\IndexController@dashboard', 'layouts.admin', 'get', 'admin.index');
+		$admin  = Page::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\NavigationController@dashboard', 'layouts.admin', 'get', 'admin.index');
 
 		// Add the resource pages
 		Page::createResourcePages('Resources', 'Boyhagemann\Admin\Controller\ResourceController', 'admin/resources', 'layouts.admin');
-		Page::createResourcePages('Apps', 'Boyhagemann\Admin\Controller\AppController', 'admin/apps', 'layouts.admin');
 		Page::createResourcePages('Pages', 'Boyhagemann\Pages\Controller\PageController', 'admin/pages', 'layouts.admin');
 		Page::createResourcePages('Blocks', 'Boyhagemann\Content\Controller\BlockController', 'admin/blocks', 'layouts.admin');
 		Page::createResourcePages('Content', 'Boyhagemann\Content\Controller\ContentController', 'admin/content', 'layouts.admin');

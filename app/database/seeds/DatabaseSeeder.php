@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder {
 		 $this->call('ResourcesTableSeeder');
 		 $this->call('LayoutsTableSeeder');
 		 $this->call('SectionsTableSeeder');
-		 $this->call('NavigationNodesTableSeeder');
 		 $this->call('ContentTableSeeder');
 		 $this->call('PagesTableSeeder');
 		 $this->call('BlocksTableSeeder');
-		 $this->call('ContainersTableSeeder');
+		 $this->call('NavigationContainersTableSeeder');
+		 $this->call('NavigationNodesTableSeeder');
 	}
 
 }
