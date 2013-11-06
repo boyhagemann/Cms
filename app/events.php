@@ -13,23 +13,3 @@ Event::listen('modelBuilder.generator.export', function(Illuminate\Database\Sche
 		Session::flash('info', $message);
 	}
 });
-
-
-
-View::creator('layouts.admin', function(Illuminate\View\View $view) {
-
-	$route = Route::currentRouteName();
-
-	if(strrpos($route, '.index') !== false) {
-
-		$view->with('menuLeft', array(
-			array(
-				'label' => 'Dashboard',
-				'route' => 'admin.index',
-				'method' => 'get',
-			)
-		));
-	}
-
-
-});
