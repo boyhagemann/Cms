@@ -18,8 +18,10 @@ class CreateSectionsTable extends Migration {
 			$table->timestamps();
 			$table->string('title');
 			$table->string('name');
+			$table->string('mode');
 
 			$table->index('name');
+			$table->index('mode');
 		});
 	}
 

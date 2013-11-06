@@ -17,24 +17,28 @@ class SectionsTableSeeder extends Seeder {
 			'id' => self::CONTENT,
 			'title' => 'Content',
 			'name' => 'content',
+			'mode' => Section::MODE_PUBLIC,
 		));
 
 		Section::create(array(
 			'id' => self::SIDEBAR,
 			'title' => 'Sidebar',
 			'name' => 'sidebar',
+			'mode' => Section::MODE_PUBLIC,
 		));
 
 		Section::create(array(
 			'id' => self::TOOLS,
 			'title' => 'Tools',
 			'name' => 'tools',
+			'mode' => Section::MODE_PROTECTED,
 		));
 
 		Section::create(array(
 			'id' => self::NAVBAR,
 			'title' => 'Navigation bar',
 			'name' => 'navbar',
+			'mode' => Section::MODE_PROTECTED,
 		));
 	}
 

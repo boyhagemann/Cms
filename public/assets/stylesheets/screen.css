@@ -35,3 +35,18 @@ ul.dashboard li a:hover {
 ul.dashboard li a:hover span:before {
 	color: #357ebd;
 }
+
+.content_block {
+	position: relative;
+}
+.content_block__navbar {
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+}
+.content_block__inner {
+	opacity: 0.3;
+}
+
+
+
