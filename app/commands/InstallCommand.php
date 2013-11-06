@@ -28,23 +28,16 @@ class InstallCommand extends Command {
 	{
 		$this->info('Installing...');
 
-		$database = $this->getDatabaseName();
-
-		if (!$this->confirm(sprintf('Use database name "%s"? [yes|no]', $database)))
-		{
-			$database = $this->ask('What is the database name then?');
-		}
-
-		// Create a local config file with the new database
-		$this->writeLocalDatabaseConfigFile($database);
 
 		// Create the new database using a new PDO connection.
-		$config = Config::get('database.connections.mysql');
-		$pdo = new PDO(sprintf('mysql:host=%s', $config['host']), $config['username'], $config['password']);
-		$pdo->exec('CREATE DATABASE IF NOT EXISTS ' . $database);
+		$pdo = new PDO(sprintf('mysql:host=%s', $this->argument('host')), $this->argument('username'), $this->argument('password'));
+		$pdo->exec('CREATE DATABASE IF NOT EXISTS ' . $this->argument('database'));
 
 		// Dynamically set the new database table
-		Config::set('database.connections.mysql.database', $database);
+		Config::set('database.connections.mysql.database', $this->argument('database'));
+
+		// Create a local config file with the new database
+		$this->writeLocalDatabaseConfigFile();
 
 		$this->call('migrate');
 		$this->call('db:seed');
@@ -57,9 +50,9 @@ class InstallCommand extends Command {
 	/**
 	 * @param $database
 	 */
-	protected function writeLocalDatabaseConfigFile($database)
+	protected function writeLocalDatabaseConfigFile()
 	{
-		$this->info('Writing local - configuration file');
+		$this->info('Writing local configuration file');
 
 		$template = "<?php
 
@@ -69,10 +62,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '%s',
 			'database'  => '%s',
-			'username'  => 'root',
-			'password'  => '',
+			'username'  => '%s',
+			'password'  => '%s',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -82,7 +75,7 @@ return array(
 
 );
 ";
-		$content = sprintf($template, $database);
+		$content = sprintf($template, $this->argument('host'), $this->argument('database'),  $this->argument('username'), $this->argument('password'));
 		$path = app_path() . '/config/' . App::environment();
 		@mkdir($path, 0755, true);
 		file_put_contents($path . '/database.php', $content);
@@ -96,8 +89,14 @@ return array(
 	 */
 	protected function getArguments()
 	{
+		$config = Config::get('database.connections.mysql');
+		$database = $this->getDatabaseName();
+
 		return array(
-			array('database', InputArgument::OPTIONAL, 'The database name', $this->getDatabaseName()),
+			array('host', 		InputArgument::OPTIONAL, 'The database host', $config['host']),
+			array('database', 	InputArgument::OPTIONAL, 'The database name', $database),
+			array('username', 	InputArgument::OPTIONAL, 'The database username', $config['username']),
+			array('password', 	InputArgument::OPTIONAL, 'The database password', $config['password']),
 		);
 	}
 
