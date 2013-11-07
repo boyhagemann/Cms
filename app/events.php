@@ -47,7 +47,7 @@ Event::listen('crud::saved', function($model, $controller) {
 		@mkdir(dirname($filename), 0755, true);
 		file_put_contents($filename, $generator->generate());
 
-		Page::createResourcePages($model->title, $model->controller, $model->url);
+		Page::createResourcePages($model->title, $model->controller);
 	}
 
 
