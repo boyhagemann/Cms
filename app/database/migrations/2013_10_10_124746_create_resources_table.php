@@ -18,6 +18,7 @@ class CreateResourcesTable extends Migration {
 			$table->timestamps();
 			$table->string('title');
 			$table->string('controller');
+			$table->string('path');
 		});
 	}
 
