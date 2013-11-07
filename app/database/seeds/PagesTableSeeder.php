@@ -15,12 +15,12 @@ class PagesTableSeeder extends Seeder {
 		$admin  = Page::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\NavigationController@dashboard', 'layouts.admin', 'get', 'admin.index');
 
 		// Add the resource pages
-		Page::createResourcePages('Resources', 'Boyhagemann\Admin\Controller\ResourceController', 'admin/resources', 'layouts.admin');
-		Page::createResourcePages('Pages', 'Boyhagemann\Pages\Controller\PageController', 'admin/pages', 'layouts.admin');
-		Page::createResourcePages('Dashboard Apps', 'Boyhagemann\Admin\Controller\DashboardController', 'admin/dashboard', 'layouts.admin');
-		Page::createResourcePages('Blocks', 'Boyhagemann\Content\Controller\BlockController', 'admin/blocks', 'layouts.admin');
-		Page::createResourcePages('Content', 'Boyhagemann\Content\Controller\ContentController', 'admin/content', 'layouts.admin');
-		Page::createResourcePages('Layouts', 'Boyhagemann\Pages\Controller\LayoutController', 'admin/layouts', 'layouts.admin');
+		Page::createResourcePages('Resources', 'Boyhagemann\Admin\Controller\ResourceController');
+		Page::createResourcePages('Pages', 'Boyhagemann\Pages\Controller\PageController');
+		Page::createResourcePages('Dashboard Apps', 'Boyhagemann\Admin\Controller\DashboardController');
+		Page::createResourcePages('Blocks', 'Boyhagemann\Content\Controller\BlockController');
+		Page::createResourcePages('Content', 'Boyhagemann\Content\Controller\ContentController');
+		Page::createResourcePages('Layouts', 'Boyhagemann\Pages\Controller\LayoutController');
 
 		// These routes handle the content configuration form
 		Page::createWithContent('Content config form', 'admin/content/config-edit/{content}', 'Boyhagemann\Content\Controller\ConfigController@edit', 'layouts.admin', 'GET', 'admin.content.config.edit');
