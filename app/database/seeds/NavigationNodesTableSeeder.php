@@ -11,7 +11,7 @@ class NavigationNodesTableSeeder extends Seeder {
 
 		Node::create(array(
 			'title' => 'Dashboard Apps',
-			'page_id' => Page::whereAlias('admin.dashboard.index')->first()->id,
+			'page_id' => Page::whereAlias('admin.dashboard-apps.index')->first()->id,
 			'icon_class' => 'icon-th-list',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
