@@ -11,32 +11,29 @@ class NavigationNodesTableSeeder extends Seeder {
 
 		Node::create(array(
 			'title' => 'Dashboard Apps',
-			'page_id' => Page::whereAlias('admin.dashboard-apps.index')->first()->id,
+			'page_id' => Page::whereAlias('admin.dashboard-app.index')->first()->id,
 			'icon_class' => 'icon-th-list',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
 		Node::create(array(
 			'title' => 'Pages',
-			'page_id' => Page::whereAlias('admin.pages.index')->first()->id,
+			'page_id' => Page::whereAlias('admin.page.index')->first()->id,
 			'icon_class' => 'icon-list-ul',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
 		Node::create(array(
 			'title' => 'Create page',
-			'page_id' => Page::whereAlias('admin.pages.create')->first()->id,
+			'page_id' => Page::whereAlias('admin.page.create')->first()->id,
 			'icon_class' => 'icon-file',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
 		Node::create(array(
-			'title' => 'Edit layout admin',
-			'page_id' => Page::whereAlias('admin.layouts.edit')->first()->id,
+			'title' => 'Create resource',
+			'page_id' => Page::whereAlias('admin.resource.create')->first()->id,
 			'icon_class' => 'icon-file',
-			'params' => array(
-				'id' => 1
-			),
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 	}

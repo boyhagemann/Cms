@@ -1,6 +1,6 @@
 <?php
 
-use Boyhagemann\Pages\Model\Page;
+use Boyhagemann\Pages\Model\PageRepository;
 use Boyhagemann\Content\Model\Content;
 
 class PagesTableSeeder extends Seeder {
@@ -11,20 +11,15 @@ class PagesTableSeeder extends Seeder {
 		DB::table('navigation_nodes')->delete();
 
 		// Basic pages
-		$home   = Page::createWithContent('Home', '/', '', 'layouts.default', 'get', 'home');
-		$admin  = Page::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\NavigationController@dashboard', 'layouts.admin', 'get', 'admin.index');
+		$home   = PageRepository::createWithContent('Home', '/', '', 'layouts.default', 'get', 'home');
+		$admin  = PageRepository::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\NavigationController@dashboard', 'layouts.admin', 'get', 'admin.index');
 
 		// Add the resource pages
-		Page::createResourcePages('Resources', 'Boyhagemann\Admin\Controller\ResourceController');
-		Page::createResourcePages('Pages', 'Boyhagemann\Pages\Controller\PageController');
-		Page::createResourcePages('Dashboard Apps', 'Boyhagemann\Admin\Controller\DashboardController');
-		Page::createResourcePages('Blocks', 'Boyhagemann\Content\Controller\BlockController');
-		Page::createResourcePages('Content', 'Boyhagemann\Content\Controller\ContentController');
-		Page::createResourcePages('Layouts', 'Boyhagemann\Pages\Controller\LayoutController');
+		PageRepository::createResourcePages('Dashboard App', 'Boyhagemann\Admin\Controller\DashboardController');
 
 		// These routes handle the content configuration form
-		Page::createWithContent('Content config form', 'admin/content/config-edit/{content}', 'Boyhagemann\Content\Controller\ConfigController@edit', 'layouts.admin', 'GET', 'admin.content.config.edit');
-		Page::createWithContent('Content config update', 'admin/content/config-update/{content}', 'Boyhagemann\Content\Controller\ConfigController@update', 'layouts.admin', 'POST', 'admin.content.config.update');
+		PageRepository::createWithContent('Content config form', 'admin/content/config-edit/{content}', 'Boyhagemann\Content\Controller\ConfigController@edit', 'layouts.admin', 'GET', 'admin.content.config.edit');
+		PageRepository::createWithContent('Content config update', 'admin/content/config-update/{content}', 'Boyhagemann\Content\Controller\ConfigController@update', 'layouts.admin', 'POST', 'admin.content.config.update');
 
                 // Toolbar for switching content/view mode
 		Content::create(array(

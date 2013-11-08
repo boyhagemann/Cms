@@ -1,6 +1,6 @@
 <?php
 
-use Boyhagemann\Admin\Model\Resource;
+use Boyhagemann\Admin\Model\ResourceRepository;
 
 class ResourcesTableSeeder extends Seeder {
 
@@ -8,30 +8,31 @@ class ResourcesTableSeeder extends Seeder {
 	{
 		DB::table('resources')->delete();
 
-		Resource::create(array(
-			'title' => 'App',
-			'controller' => 'Boyhagemann\Admin\Controller\AppController',
-		));
-
-		Resource::create(array(
+		ResourceRepository::createWithPages(array(
 			'title' => 'Resource',
 			'controller' => 'Boyhagemann\Admin\Controller\ResourceController',
 		));
-                
-		Resource::create(array(
+
+		ResourceRepository::createWithPages(array(
 			'title' => 'Page',
 			'controller' => 'Boyhagemann\Pages\Controller\PageController',
 		));
 
-		Resource::create(array(
+		ResourceRepository::createWithPages(array(
+			'title' => 'Layout',
+			'controller' => 'Boyhagemann\Pages\Controller\LayoutController',
+		));
+
+		ResourceRepository::createWithPages(array(
 			'title' => 'Block',
 			'controller' => 'Boyhagemann\Content\Controller\BlockController',
 		));
 
-		Resource::create(array(
+		ResourceRepository::createWithPages(array(
 			'title' => 'Content',
 			'controller' => 'Boyhagemann\Content\Controller\ContentController',
 		));
+
 	}
 
 }
