@@ -38,7 +38,6 @@ ul.dashboard li a:hover span:before {
 
 .content_block {
 	position: relative;
-	clear: both;
 }
 .content_block__navbar {
 	position: absolute;

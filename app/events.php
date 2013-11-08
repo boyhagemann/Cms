@@ -15,6 +15,8 @@ Event::subscribe('Boyhagemann\Content\Subscriber\AddContentOnPage');
 Event::subscribe('Boyhagemann\Content\Subscriber\HandleRedirectResponse');
 Event::subscribe('Boyhagemann\Content\Subscriber\ChangeCrudTitle');
 
+Event::subscribe('Boyhagemann\Navigation\Subscriber\AddResourceLeftRightNavigation');
+
 
 Event::listen('crud::saved', function($model, $controller) {
 
