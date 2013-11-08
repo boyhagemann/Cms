@@ -4,8 +4,8 @@ use Boyhagemann\Admin\Controller\ResourceController;
 
 
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddControllerAndPathsToResource');
-Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateAdminHookToResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateFrontHookToResource');
+Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateAdminHookToResource');
 
 
 Event::listen('crud::saved', function($model, $controller) {
