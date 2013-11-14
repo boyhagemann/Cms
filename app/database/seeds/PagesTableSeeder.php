@@ -18,8 +18,8 @@ class PagesTableSeeder extends Seeder {
 		PageRepository::createResourcePages('Dashboard App', 'Boyhagemann\Admin\Controller\DashboardController');
 
 		// These routes handle the content configuration form
-		PageRepository::createWithContent('Content config form', 'admin/content/config-edit/{content}', 'Boyhagemann\Content\Controller\ConfigController@edit', 'layouts.admin', 'GET', 'admin.content.config.edit');
-		PageRepository::createWithContent('Content config update', 'admin/content/config-update/{content}', 'Boyhagemann\Content\Controller\ConfigController@update', 'layouts.admin', 'POST', 'admin.content.config.update');
+		PageRepository::createWithContent('Content config form', 'admin/content/config-edit/{content}', 'Boyhagemann\Content\Controller\ConfigController@edit', 'layouts.admin', 'get', 'admin.content.config.edit');
+		PageRepository::createWithContent('Content config update', 'admin/content/config-update/{content}', 'Boyhagemann\Content\Controller\ConfigController@update', 'layouts.admin', 'put', 'admin.content.config.update');
 
                 // Toolbar for switching content/view mode
 		Content::create(array(
