@@ -32,7 +32,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 
-		{{ $navbar }}
 
 	</div>
 </nav>
@@ -40,6 +39,13 @@
 <!-- Container -->
 <div class="container">
 
+        @if($navbar)
+	<div class="row">            
+            <div class="col-lg-12 page-header">
+                {{ $navbar }}
+            </div>
+	</div>
+        @endif
 
 	<!-- Notifications -->
 	@include('notifications')
@@ -47,8 +53,12 @@
 
 	<div class="row">
 
+            @if($sidebar)
 		<div class="col-lg-9">{{ $content }}</div>
 		<div class="col-lg-3">{{ $sidebar }}</div>
+            @else
+		<div class="col-lg-12">{{ $content }}</div>
+            @endif
 	</div>
 
 

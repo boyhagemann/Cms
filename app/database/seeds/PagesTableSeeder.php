@@ -38,7 +38,7 @@ class PagesTableSeeder extends Seeder {
                 // Left navigation bar
 		Content::create(array(
 			'controller'    => 'Boyhagemann\Navigation\Controller\MenuController@container',
-			'params' 	=> array('container' => 'left'),
+			'params' 	=> array('container' => 'left', 'class' => 'nav pull-left'),
 			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
 			'section_id'    => SectionsTableSeeder::NAVBAR
 		));
@@ -46,7 +46,7 @@ class PagesTableSeeder extends Seeder {
                 // Right navigation bar
 		Content::create(array(
 			'controller'    => 'Boyhagemann\Navigation\Controller\MenuController@container',
-			'params' 	=> array('container' => 'right', 'class' => 'nav navbar-nav pull-right'),
+			'params' 	=> array('container' => 'right', 'class' => 'nav pull-right'),
 			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
 			'section_id'    => SectionsTableSeeder::NAVBAR
 		));

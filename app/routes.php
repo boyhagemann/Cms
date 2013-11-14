@@ -11,4 +11,3 @@
 |
 */
 Route::when('*', array('content'));
-
