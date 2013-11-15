@@ -7,6 +7,7 @@ use Boyhagemann\Admin\Model\Resource;
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddControllerAndPathsToResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateFrontHookToResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateAdminHookToResource');
+Event::subscribe('Boyhagemann\Admin\Subscriber\SwitchContentMode');
 
 
 
@@ -16,6 +17,8 @@ Event::subscribe('Boyhagemann\Content\Subscriber\HandleRedirectResponse');
 Event::subscribe('Boyhagemann\Content\Subscriber\ChangeCrudTitle');
 
 Event::subscribe('Boyhagemann\Navigation\Subscriber\AddResourceLeftRightNavigation');
+
+
 
 
 Event::listen('crud::saved', function($model, $controller) {
