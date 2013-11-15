@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'webble1';
+	src:url('../../../../fonts/webble1.eot');
+	src:url('../../../../fonts/webble1.eot?#iefix') format('embedded-opentype'),
+		url('../../../../fonts/webble1.ttf') format('truetype'),
+		url('../../../../fonts/webble1.woff') format('woff'),
+		url('../../../../fonts/webble1.svg#webble1') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'webble1';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+	content: "\e600";
+}
+.icon-file:before {
+	content: "\e601";
+}
+.icon-wrench:before {
+	content: "\e602";
+}
+.icon-menu:before {
+	content: "\e603";
+}
+.icon-plus:before {
+	content: "\e604";
+}
+.icon-table:before {
+	content: "\e605";
+}
+.icon-close:before {
+	content: "\e606";
+}
+.icon-earth:before {
+	content: "\e607";
+}
+.icon-cogs:before {
+	content: "\e608";
+}
+.icon-cog:before {
+	content: "\e609";
+}
+.icon-expand:before {
+	content: "\e60a";
+}
+.icon-home:before {
+	content: "\e60b";
+}
+.icon-unlocked:before {
+	content: "\e60c";
+}
+.icon-lock:before {
+	content: "\e60d";
+}
+.icon-remove:before {
+	content: "\e60e";
+}
+.icon-share:before {
+	content: "\e60f";
+}
+.icon-layout:before {
+	content: "\e610";
+}

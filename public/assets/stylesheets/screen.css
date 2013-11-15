@@ -36,9 +36,37 @@ ul.dashboard li a:hover span:before {
 	color: #357ebd;
 }
 
-.content_block {
-	position: relative;
+
+
+.content_section__link {
+	color: #fff;
+	opacity: 0.4;
+	padding: 0;
+}
+.content_section__link:hover {
+	color: #fff;
+	opacity: 1;
+	text-decoration: none;
 }
 
+
+.content_block {
+	border-color: #AFC0CC;
+}
+.panel-primary .content_block__heading {
+	background-color: #AFC0CC;
+	border-color: #AFC0CC;
+	cursor: move;
+}
+.content_block__link {
+	color: #fff;
+	padding: 0 0 0 5px;
+	opacity: 0.4;
+}
+.content_block__link:hover {
+	color: #fff;
+	opacity: 1;
+	text-decoration: none;
+}
 
 

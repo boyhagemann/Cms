@@ -12,14 +12,14 @@ class NavigationNodesTableSeeder extends Seeder {
 		Node::create(array(
 			'title' => 'Dashboard Apps',
 			'page_id' => Page::whereAlias('admin.dashboard-app.index')->first()->id,
-			'icon_class' => 'icon-th-list',
+			'icon_class' => 'icon-layout',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
 		Node::create(array(
 			'title' => 'Pages',
 			'page_id' => Page::whereAlias('admin.page.index')->first()->id,
-			'icon_class' => 'icon-list-ul',
+			'icon_class' => 'icon-menu',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
