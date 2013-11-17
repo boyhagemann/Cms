@@ -52,6 +52,8 @@
 
 <!-- Javascripts
 ================================================== -->
+@javascripts('application', 'admin')
+
 </body>
 </html>
 

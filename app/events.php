@@ -18,6 +18,7 @@ Event::subscribe('Boyhagemann\Content\Subscriber\ChangeCrudTitle');
 
 Event::subscribe('Boyhagemann\Navigation\Subscriber\AddResourceLeftRightNavigation');
 
+Event::subscribe('Boyhagemann\Text\Subscriber\AddTextDirectlyFromSection');
 
 
 

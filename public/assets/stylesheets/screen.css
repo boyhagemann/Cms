@@ -4,38 +4,23 @@ body {
 }
 
 
-ul.dashboard {
-	list-style: none;
-	padding: 0;
-}
-ul.dashboard li {
-	float: left;
-	margin: 15px;
-	width: 64px;
-}
-ul.dashboard li a{
-	display: inline-block; /* Fix for clickability issue in WebKit */
-	color: #666;
-	text-align: center;
-}
-ul.dashboard li a span:last-child {
-	display: block;
-	margin-top: 10px;
-}
-ul.dashboard li a span:before {
-	font-size: 64px;
-	color: #ccc;
+.dashboard__item:first-child {
+    margin-top: 15px;
 }
 
-
-ul.dashboard li a:hover {
-	text-decoration: none;
-	color: #000;
-}
-ul.dashboard li a:hover span:before {
-	color: #357ebd;
+.dashboard__item:nth-child(5n) {
+    clear: left;
 }
 
+.dashboard__icon {
+    font-size: 20px;
+    color: #fff;
+    padding: 7px;
+    background: #31b0d5;
+}
+.dashboard__link {
+    color: #000;   
+}
 
 
 .content_section__link {
@@ -70,3 +55,8 @@ ul.dashboard li a:hover span:before {
 }
 
 
+
+
+.text-modal {
+    width: 960px;
+}

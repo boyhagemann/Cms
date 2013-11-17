@@ -31,7 +31,7 @@ return array(
         'application' => function($collection)
         {
 			$collection->stylesheet('fonts');
-
+                                
             // Switch to the stylesheets directory and require the "less" and "sass" directories.
             // These directories both have a filter applied to them so that the built
             // collection will contain valid CSS.
@@ -56,6 +56,13 @@ return array(
             });
 
             $directory->apply('JsMin');
+            
+            
+			$packages = $collection->requireTree('packages');
+            $packages->apply('CssMin');
+            $packages->apply('UriRewriteFilter');
+            
+            $collection->javascript('assets/js/scripts.js');
         }
 
     ),

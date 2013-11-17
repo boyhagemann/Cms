@@ -17,6 +17,7 @@ class CreateNavigationNodesTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('title');
+			$table->text('description');
 			$table->integer('page_id');
 			$table->integer('container_id');
 			$table->string('link_class');
