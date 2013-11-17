@@ -177,7 +177,7 @@ return array(
 
         'assets' => array(
 			'jquery' => 'assets/js/jquery-1.10.2-min.js',
-			'fonts' => 'assets/fonts/webble1.css',
+			'fonts' => 'assets/fonts/font-awesome.css',
 		),
 
         'filters' => array(

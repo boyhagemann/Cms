@@ -13,7 +13,7 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Dashboard Apps',
             'description' => 'Create shortcuts to pages that you use often.',
 			'page_id' => Page::whereAlias('admin.dashboard-app.index')->first()->id,
-			'icon_class' => 'icon-layout',
+			'icon_class' => 'icon-th',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
@@ -21,7 +21,7 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Pages',
             'description' => 'Manage all of your pages you created.',
 			'page_id' => Page::whereAlias('admin.page.index')->first()->id,
-			'icon_class' => 'icon-menu',
+			'icon_class' => 'icon-list-ul',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
@@ -37,7 +37,7 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Create resource',
             'description' => 'If you want dynamic content on your website, this is a good way to start',
 			'page_id' => Page::whereAlias('admin.resource.create')->first()->id,
-			'icon_class' => 'icon-file',
+			'icon_class' => 'icon-briefcase',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 	}
