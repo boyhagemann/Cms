@@ -42,7 +42,7 @@ class InstallCommand extends Command {
 		$this->call('migrate');
 		$this->call('db:seed');
                 $this->call('asset:publish', array('--bench' => 'boyhagemann/content'));
-                $this->call('basset:build');
+//                $this->call('basset:build');
 
 		$this->info('Done!');
 	}

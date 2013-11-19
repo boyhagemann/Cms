@@ -114,7 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Basset\BassetServiceProvider',
+		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
 		'Boyhagemann\Admin\AdminServiceProvider',
 		'Boyhagemann\Crud\CrudServiceProvider',
 		'Boyhagemann\Pages\PagesServiceProvider',

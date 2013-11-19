@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.0.*",
-		"jasonlewis/basset": "dev-master",
+		"codesleeve/asset-pipeline": "dev-master",
 		"boyhagemann/admin": "dev-master",
 		"boyhagemann/content": "dev-master",
 		"boyhagemann/text": "dev-master"
