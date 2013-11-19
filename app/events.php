@@ -15,6 +15,7 @@ Event::subscribe('Boyhagemann\Content\Subscriber\AddContentOnResourcePage');
 Event::subscribe('Boyhagemann\Content\Subscriber\AddContentOnPage');
 Event::subscribe('Boyhagemann\Content\Subscriber\HandleRedirectResponse');
 Event::subscribe('Boyhagemann\Content\Subscriber\ChangeCrudTitle');
+Event::subscribe('Boyhagemann\Content\Subscriber\ReorderBlocksInSection');
 
 Event::subscribe('Boyhagemann\Navigation\Subscriber\AddResourceLeftRightNavigation');
 

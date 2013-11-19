@@ -12,6 +12,7 @@
 //
 //= require jquery.js
 //= require jquery.hotkeys.js
+//= require jquery.sortable.js
 //= require bootstrap.min.js
 //= require bootstrap-wysiwyg.js
 //= require_tree .

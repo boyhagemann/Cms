@@ -22,12 +22,14 @@ class CreateContentTable extends Migration {
 			$table->integer('block_id');
 			$table->string('controller');
 			$table->text('params');
+			$table->integer('position');
 			$table->smallInteger('global');
 
 			$table->index('layout_id');
 			$table->index('page_id');
 			$table->index('section_id');
 			$table->index('block_id');
+			$table->index('position');
 			$table->index('global');
 		});
 	}
