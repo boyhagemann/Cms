@@ -11,4 +11,7 @@
 // The available directives right now are require, require_directory, and require_tree
 //
 //= require jquery.js
+//= require jquery.hotkeys.js
+//= require bootstrap.min.js
+//= require bootstrap-wysiwyg.js
 //= require_tree .
