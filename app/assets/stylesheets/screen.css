@@ -1,8 +1,13 @@
 body {
-	padding-top: 70px;
+	padding-top: 50px;
 	padding-bottom: 70px;
 }
 
+
+
+.admin-navbar {
+    margin-top: 30px;
+}
 
 .dashboard__item:first-child {
     margin-top: 15px;

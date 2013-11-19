@@ -28,20 +28,29 @@
 </head>
 
 <body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    
+<nav class="navbar navbar-fixed-top" role="navigation">
 	<div class="container">
 
 
 	</div>
 </nav>
 
+@if($jumbotron)
+<div class="jumbotron">
+    <div class="container">
+        {{ $jumbotron }}
+    </div>
+</div>
+@endif
+    
+    
 <!-- Container -->
 <div class="container">
 
         @if($navbar)
-	<div class="row">            
-            <div class="col-lg-12 page-header">
+	<div class="row admin-navbar">            
+            <div class="col-lg-12">
                 {{ $navbar }}
             </div>
 	</div>

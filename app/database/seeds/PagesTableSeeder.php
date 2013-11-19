@@ -55,6 +55,15 @@ class PagesTableSeeder extends Seeder {
 
 		Content::create(array(
 			'block_id'      => BlocksTableSeeder::ID_TEXT,
+			'page_id'       => $admin->id,
+			'section_id'    => SectionsTableSeeder::JUMBOTRON,
+			'params'        => array(
+				'text' => 'Jumbo!!!'
+			)
+		));
+        
+		Content::create(array(
+			'block_id'      => BlocksTableSeeder::ID_TEXT,
 			'page_id'       => $home->id,
 			'section_id'    => SectionsTableSeeder::CONTENT,
 			'params'        => array(

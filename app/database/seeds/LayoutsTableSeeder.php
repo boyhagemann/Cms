@@ -17,6 +17,7 @@ class LayoutsTableSeeder extends Seeder
             'name' => 'layouts.admin',
         ));
         $admin->sections()->sync(array(
+            SectionsTableSeeder::JUMBOTRON,
             SectionsTableSeeder::CONTENT,
             SectionsTableSeeder::SIDEBAR,
             SectionsTableSeeder::TOOLS,
