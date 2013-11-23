@@ -11,7 +11,7 @@ class Article extends Eloquent
 
     protected $guarded = array('id');
 
-    protected $fillable = array();
+    protected $fillable = array('title');
 
 
 }

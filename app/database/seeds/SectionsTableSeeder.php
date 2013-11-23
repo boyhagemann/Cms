@@ -9,6 +9,7 @@ class SectionsTableSeeder extends Seeder {
     const TOOLS     = 3;
     const NAVBAR    = 4;
     const JUMBOTRON = 5;
+    const TOP       = 6;
 
 	public function run()
 	{
@@ -46,6 +47,13 @@ class SectionsTableSeeder extends Seeder {
 			'id' => self::JUMBOTRON,
 			'title' => 'Jumbotron',
 			'name' => 'jumbotron',
+			'mode' => Section::MODE_PROTECTED,
+		));
+        
+		Section::create(array(
+			'id' => self::TOP,
+			'title' => 'Top',
+			'name' => 'top',
 			'mode' => Section::MODE_PROTECTED,
 		));
 	}

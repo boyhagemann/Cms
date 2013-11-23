@@ -30,9 +30,10 @@
 <body>
     
 <nav class="navbar navbar-fixed-top" role="navigation">
-	<div class="container">
-
-
+	<div class="container">        
+        <div class="col-lg-12">
+            {{ $top }}
+        </div>
 	</div>
 </nav>
 

@@ -18,9 +18,9 @@ Event::subscribe('Boyhagemann\Crud\Subscriber\BuildModelWhenFormIsReady');
  */
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddControllerAndPathsToResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateAdminHookToResource');
-Event::subscribe('Boyhagemann\Admin\Subscriber\AddDashboardNavigationForResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\AddGenerateFrontHookToResource');
-Event::subscribe('Boyhagemann\Admin\Subscriber\RedirectToResourceFrontEndPage');
+Event::subscribe('Boyhagemann\Admin\Subscriber\AddDashboardNavigationForResource');
+Event::subscribe('Boyhagemann\Admin\Subscriber\RedirectToResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\SwitchContentMode');
 Event::subscribe('Boyhagemann\Admin\Subscriber\ShowHelpPageWhenResourceHasNoFormElements');
 

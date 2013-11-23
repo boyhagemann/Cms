@@ -71,6 +71,11 @@ class PagesTableSeeder extends Seeder {
 			)
 		));
 
+		Content::create(array(
+			'controller'    => 'Boyhagemann\User\Controller\AuthController@status',
+			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
+			'section_id'    => SectionsTableSeeder::TOP,
+		));
 	}
 
 }

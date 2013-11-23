@@ -22,6 +22,7 @@ class LayoutsTableSeeder extends Seeder
             SectionsTableSeeder::SIDEBAR,
             SectionsTableSeeder::TOOLS,
             SectionsTableSeeder::NAVBAR,
+            SectionsTableSeeder::TOP,
         ));
         $admin->save();
 

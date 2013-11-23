@@ -115,6 +115,9 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
+        
+        
+		'Boyhagemann\User\UserServiceProvider',
 		'Boyhagemann\Admin\AdminServiceProvider',
 		'Boyhagemann\Crud\CrudServiceProvider',
 		'Boyhagemann\Pages\PagesServiceProvider',
@@ -189,6 +192,7 @@ return array(
 
 		'Basset' 		  => 'Basset\Facade',
 		'Layout' 		  => 'DeSmart\Layout\Facades\Layout',
+        'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 	),
 
 );

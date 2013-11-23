@@ -15,6 +15,7 @@ class ArticleController extends CrudController
      */
     public function buildForm(FormBuilder $fb)
     {
+        $fb->text('title')->label('Title');
     }
 
     /**
