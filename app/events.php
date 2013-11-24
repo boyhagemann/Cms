@@ -39,6 +39,11 @@ Event::subscribe('Boyhagemann\Content\Subscriber\ReorderBlocksInSection');
 Event::subscribe('Boyhagemann\Navigation\Subscriber\AddResourceLeftRightNavigation');
 
 /**
+ * Pages hooks
+ */
+Event::subscribe('Boyhagemann\Pages\Subscriber\SetPermissionsForViewingPage');
+
+/**
  * Text hooks
  */
 Event::subscribe('Boyhagemann\Text\Subscriber\AddTextDirectlyFromSection');

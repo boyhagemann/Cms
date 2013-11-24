@@ -33,9 +33,24 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
+Route::filter('auth', function($route)
 {
-	if (!Sentry::check()) return Redirect::guest('login');
+    $page = $route->getOption('page');
+    $user = Sentry::getUser();
+    
+    // Fake a guest user when user is not logged in
+    if(!$user) {
+        $user = Sentry::findUserByCredentials(array('email' => 'guest'));
+    }
+    
+    // Check if the user has permission
+    $hasAccess = $user->hasAccess('view.page.' . $page->alias);
+    
+    // User is not logged in yet
+    if (!$hasAccess && $user->email == 'guest') return Redirect::route('user.login');
+    
+    // User has no rights
+	if (!$hasAccess) return Redirect::route('user.login');
 });
 
 

@@ -7,12 +7,20 @@ class UsersTableSeeder extends Seeder
 	{
 		DB::table('users')->delete();
  
-		Sentry::createUser(array(
+		$guest = Sentry::createUser(array(
+			'email' => 'guest',
+			'password' => 'guest',
+            'activated' => true,
+		));
+ 
+		$admin = Sentry::createUser(array(
 			'email' => 'admin@admin.nl',
 			'password' => 'admin',
             'activated' => true,
 		));
 
+        $admin->addGroup(Sentry::findGroupByName('admin'));
+        $guest->addGroup(Sentry::findGroupByName('guest'));
 	}
 
 }
