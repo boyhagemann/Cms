@@ -62,4 +62,9 @@ Event::listen('crud::saved', function($model, $controller) {
 
 });
 
-
+Event::listen('user.permissions', function(Boyhagemann\User\PermissionRepository $repository) {
+    
+    $repository->setPermissions('Users', array(
+        'edit.user' => 'Can edit user profile',
+    ));
+});

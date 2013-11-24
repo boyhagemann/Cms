@@ -40,6 +40,14 @@ class NavigationNodesTableSeeder extends Seeder {
 			'icon_class' => 'icon-briefcase',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
+        
+		Node::create(array(
+			'title' => 'Permissions',
+            'description' => 'Control who can access, create or update resources or other permissions.',
+			'page_id' => Page::whereAlias('user.permissions')->first()->id,
+			'icon_class' => 'icon-briefcase',
+			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
+		));
 	}
 
 }

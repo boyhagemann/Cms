@@ -12,11 +12,17 @@ class GroupsTableSeeder extends Seeder
 		Sentry::createGroup(array(
             'id' => self::ID_GUEST,
 			'name' => 'guest',
+            'permissions' => array(
+                'view.page.user.login' => 1,
+            )
 		));
  
 		Sentry::createGroup(array(
             'id' => self::ID_ADMIN,
 			'name' => 'admin',
+            'permissions' => array(
+                'view.page.user.permissions' => 1,
+            )
 		));
 
 	}
