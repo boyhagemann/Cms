@@ -48,6 +48,11 @@ Event::subscribe('Boyhagemann\Pages\Subscriber\SetPermissionsForViewingPage');
  */
 Event::subscribe('Boyhagemann\Text\Subscriber\AddTextDirectlyFromSection');
 
+/**
+ * User hooks
+ */
+//Event::subscribe('Boyhagemann\User\Subscriber\CheckPermissionsForFormElements');
+
 
 
 Event::listen('crud::saved', function($model, $controller) {
@@ -63,8 +68,14 @@ Event::listen('crud::saved', function($model, $controller) {
 });
 
 Event::listen('user.permissions', function(Boyhagemann\User\PermissionRepository $repository) {
-    
-    $repository->setPermissions('Users', array(
-        'edit.user' => 'Can edit user profile',
-    ));
+
+	$repository->setPermissions('Users', array(
+		'edit.user' => 'Can edit user profile',
+	));
+
+	$repository->setPermissions('Resource form', array(
+		'view.form.Boyhagemann\Admin\Controller\ResourceController.element.title' => 'Can view title element',
+	));
+
+
 });

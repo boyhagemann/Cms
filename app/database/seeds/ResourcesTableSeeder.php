@@ -12,7 +12,7 @@ class ResourcesTableSeeder extends Seeder {
 			'title' => 'Resource',
             'description' => 'Here you can have all your resources that will contain data you can use in your application',
 			'controller' => 'Boyhagemann\Admin\Controller\ResourceController',
-		));
+		), null, '#00B351');
 
 		ResourceRepository::createWithPages(array(
 			'title' => 'Page',
