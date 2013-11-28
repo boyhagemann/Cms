@@ -11,13 +11,13 @@ class PagesTableSeeder extends Seeder {
 		DB::table('navigation_nodes')->delete();
 
 		// Basic pages
-		$home           = PageRepository::createWithContent('Home', '/', '', 'layouts.default', 'get', 'home', '#33A000');
-		$admin          = PageRepository::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\NavigationController@dashboard', 'layouts.admin', 'get', 'admin.index', '#77B8DF');
+		$home           = PageRepository::createWithContent('Home', '/', '', 'layouts.default', 'get', 'home');
+		$admin          = PageRepository::createWithContent('Admin', 'admin', 'Boyhagemann\Admin\Controller\NavigationController@dashboard', 'layouts.admin', 'get', 'admin.index');
 		$login          = PageRepository::createWithContent('Login', 'login', 'Boyhagemann\User\Controller\AuthController@login', 'layouts.admin', 'get', 'user.login');
-		$permissions    = PageRepository::createWithContent('Permissions', 'admin/permissions', 'Boyhagemann\User\Controller\PermissionController@index', 'layouts.admin', 'get', 'user.permissions', '#C8514F');
+		$permissions    = PageRepository::createWithContent('Permissions', 'admin/permissions', 'Boyhagemann\User\Controller\PermissionController@index', 'layouts.admin', 'get', 'user.permissions');
 
 		// Add the resource pages
-		PageRepository::createResourcePages('Dashboard App', 'Boyhagemann\Admin\Controller\DashboardController', null, null, '#BA917F');
+		PageRepository::createResourcePages('Dashboard App', 'Boyhagemann\Admin\Controller\DashboardController', null, 'layouts.admin');
     
 		// These routes handle the content configuration form
 		PageRepository::createWithContent('Content create form', 'admin/content/config-create', 'Boyhagemann\Content\Controller\ConfigController@create', null, 'get', 'admin.content.config.create');

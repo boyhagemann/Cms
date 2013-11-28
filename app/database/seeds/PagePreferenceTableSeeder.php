@@ -1,20 +1,13 @@
 <?php
 
-use Boyhagemann\Admin\Model\PagePreference;
-use Boyhagemann\Pages\Model\Page;
+use Boyhagemann\Pages\Model\PageRepository;
+use Boyhagemann\Content\Model\Content;
 
-class PagePreferenceTableSeeder extends Seeder
-{
+class PagePreferenceTableSeeder extends Seeder {
+    
 	public function run()
 	{
 		DB::table('page_preference')->delete();
-
-		PagePreference::create(array(
-			'user_id' => Sentry::findUserByCredentials(array('email' => 'admin@admin.nl'))->id,
-			'page_id' => Page::whereAlias('admin.dashboard-app.index')->first()->id,
-			'color' => '#46CE57',
-			'icon_class' => 'icon-cog',
-		));
 
 	}
 

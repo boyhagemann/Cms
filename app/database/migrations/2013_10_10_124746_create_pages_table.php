@@ -22,7 +22,6 @@ class CreatePagesTable extends Migration {
 			$table->integer('layout_id');
 			$table->string('controller');
 			$table->string('alias');
-			$table->string('color');
 		});
 	}
 

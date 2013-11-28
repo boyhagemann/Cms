@@ -79,3 +79,10 @@ Event::listen('user.permissions', function(Boyhagemann\User\PermissionRepository
 
 
 });
+
+
+Event::listen('eloquent.query', function($sql) {
+
+
+
+});
