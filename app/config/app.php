@@ -115,7 +115,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
-        
+        'Barryvdh\Debugbar\ServiceProvider',
+
         
 		'Boyhagemann\User\UserServiceProvider',
 		'Boyhagemann\Admin\AdminServiceProvider',
@@ -193,6 +194,8 @@ return array(
 		'Basset' 		  => 'Basset\Facade',
 		'Layout' 		  => 'DeSmart\Layout\Facades\Layout',
         'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+        'Debugbar'        => 'Barryvdh\Debugbar\Facade',
+
 	),
 
 );

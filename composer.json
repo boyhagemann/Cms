@@ -6,6 +6,7 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"codesleeve/asset-pipeline": "dev-master",
+        "barryvdh/laravel-debugbar": "dev-master",
 		"boyhagemann/admin": "dev-master",
 		"boyhagemann/content": "dev-master",
 		"boyhagemann/text": "dev-master"

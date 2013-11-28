@@ -101,7 +101,7 @@ Route::filter('content', function(Illuminate\Routing\Route $route) {
 
 	$alias = Route::currentRouteName();
 	$method = Str::lower(Request::getMethod());
-	$page = Boyhagemann\Pages\Model\Page::whereAlias($alias)->whereMethod($method)->first();
+	$page = Boyhagemann\Content\Model\Page::whereAlias($alias)->whereMethod($method)->with('content', 'layout', 'content.section')->first();
 
 	if($page) {
 		$view = App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\DispatchController@renderPage', compact('page'));
