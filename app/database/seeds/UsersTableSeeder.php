@@ -8,7 +8,6 @@ class UsersTableSeeder extends Seeder
 	public function run()
 	{
 		DB::table('users')->delete();
-		DB::table('page_preference')->delete();
  
 		$guest = Sentry::createUser(array(
 			'email' => 'guest',
@@ -25,8 +24,6 @@ class UsersTableSeeder extends Seeder
         $admin->addGroup(Sentry::findGroupByName('admin'));
         $guest->addGroup(Sentry::findGroupByName('guest'));
 
-
-		PagePreferenceRepository::createDefaultsForUser($admin);
 	}
 
 }

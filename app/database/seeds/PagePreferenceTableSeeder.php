@@ -1,7 +1,6 @@
 <?php
 
-use Boyhagemann\Pages\Model\PageRepository;
-use Boyhagemann\Content\Model\Content;
+use Boyhagemann\Admin\Model\PagePreferenceRepository;
 
 class PagePreferenceTableSeeder extends Seeder {
     
@@ -9,6 +8,9 @@ class PagePreferenceTableSeeder extends Seeder {
 	{
 		DB::table('page_preference')->delete();
 
+		$admin = Sentry::findUserByCredentials(array('email' => 'admin@admin.nl'));
+
+		PagePreferenceRepository::createDefaultsForUser($admin);
 	}
 
 }

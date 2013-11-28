@@ -78,6 +78,8 @@ class PagesTableSeeder extends Seeder {
 			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
 			'section_id'    => SectionsTableSeeder::TOP,
 		));
+
+
 	}
 
 }
