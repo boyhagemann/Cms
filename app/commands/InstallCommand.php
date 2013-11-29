@@ -18,7 +18,7 @@ class InstallCommand extends Command {
 	 * @var string
 	 */
 	protected $description = 'Run admin installation.';
-        
+
 	/**
 	 * Execute the console command.
 	 *
@@ -27,7 +27,6 @@ class InstallCommand extends Command {
 	public function fire()
 	{
 		$this->info('Installing...');
-
 
 		// Create the new database using a new PDO connection.
 		$pdo = new PDO(sprintf('mysql:host=%s', $this->argument('host')), $this->argument('username'), $this->argument('password'));
@@ -41,8 +40,13 @@ class InstallCommand extends Command {
 
 		$this->call('migrate');
 		$this->call('db:seed');
-                $this->call('asset:publish', array('--bench' => 'boyhagemann/content'));
-//                $this->call('basset:build');
+
+		if($this->checkIfWorkbench()) {
+			$this->call('asset:publish', array('--package' => 'boyhagemann/content'));
+		}
+		else {
+			$this->call('asset:publish', array('--bench' => 'boyhagemann/content'));
+		}
 
 		$this->info('Done!');
 	}
@@ -120,6 +124,14 @@ return array(
 	protected function getOptions()
 	{
 		return array();
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function checkIfWorkbench()
+	{
+		return file_exists(base_path('workbench/boyhagemann/admin'));
 	}
 
 }

@@ -1,5 +1,7 @@
 <?php
 
+use Boyhagemann\Content\Model\PageRepository;
+
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -37,7 +39,7 @@ Route::filter('auth', function($route)
 {
     $page = $route->getOption('page');
     $user = Sentry::getUser();
-    
+
     // Fake a guest user when user is not logged in
     if(!$user) {
         $user = Sentry::findUserByCredentials(array('email' => 'guest'));
@@ -99,14 +101,12 @@ Route::filter('csrf', function()
 
 Route::filter('content', function(Illuminate\Routing\Route $route) {
 
-	$alias = Route::currentRouteName();
+	$alias 	= Route::currentRouteName();
 	$method = Str::lower(Request::getMethod());
-	$page = Boyhagemann\Content\Model\Page::whereAlias($alias)->whereMethod($method)->with('content', 'layout', 'content.section')->first();
+	$page 	= PageRepository::findPageByAliasAndMethod($alias, $method);
 
 	if($page) {
-		$view = App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\DispatchController@renderPage', compact('page'));
-		return $view;
-		dd($view);
+		return App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\DispatchController@renderPage', compact('page'));
 	}
 
 });
