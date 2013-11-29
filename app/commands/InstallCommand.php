@@ -43,7 +43,7 @@ class InstallCommand extends Command {
 			$this->call('config:publish', array('package' => 'boyhagemann/admin', '--path' => 'workbench/boyhagemann/content/src/config'));
 		}
 		else {
-			$this->call('asset:publish', array('--package' => 'boyhagemann/content'));
+			$this->call('asset:publish', array('package' => 'boyhagemann/content'));
 			$this->call('config:publish', array('package' => 'boyhagemann/admin'));
 		}
 
