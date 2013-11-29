@@ -38,9 +38,6 @@ class InstallCommand extends Command {
 		// Create a local config file with the new database
 		$this->writeLocalDatabaseConfigFile();
 
-		$this->call('migrate');
-		$this->call('db:seed');
-
 		if($this->checkIfWorkbench()) {
 			$this->call('asset:publish', array('--bench' => 'boyhagemann/content'));
 			$this->call('config:publish', array('package' => 'boyhagemann/admin', '--path' => 'workbench/boyhagemann/content/src/config'));
@@ -49,6 +46,9 @@ class InstallCommand extends Command {
 			$this->call('asset:publish', array('--package' => 'boyhagemann/content'));
 			$this->call('config:publish', array('package' => 'boyhagemann/admin'));
 		}
+
+		$this->call('migrate');
+		$this->call('db:seed');
 
 		$this->info('Done!');
 	}
