@@ -45,6 +45,11 @@ Event::subscribe('Boyhagemann\Navigation\Subscriber\AddResourceLeftRightNavigati
 Event::subscribe('Boyhagemann\Pages\Subscriber\SetPermissionsForViewingPage');
 
 /**
+ * Form hooks
+ */
+Event::subscribe('Boyhagemann\Form\Subscriber\SaveFormStateInSession');
+
+/**
  * Text hooks
  */
 Event::subscribe('Boyhagemann\Text\Subscriber\AddTextDirectlyFromSection');
