@@ -15,7 +15,10 @@
 		"classmap": [
 			"app/commands",
 			"app/controllers",
+			"app/resources",
 			"app/models",
+			"app/repositories",
+			"app/forms",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"

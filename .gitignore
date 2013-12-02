@@ -2,6 +2,7 @@
 /vendor
 /public/builds
 /workbench
+/app/config/local
 composer.phar
 composer.lock
 .DS_Store
