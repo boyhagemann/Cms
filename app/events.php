@@ -23,6 +23,7 @@ Event::subscribe('Boyhagemann\Admin\Subscriber\AddDashboardNavigationForResource
 Event::subscribe('Boyhagemann\Admin\Subscriber\RedirectToResource');
 Event::subscribe('Boyhagemann\Admin\Subscriber\SwitchContentMode');
 Event::subscribe('Boyhagemann\Admin\Subscriber\ShowHelpPageWhenResourceHasNoFormElements');
+Event::subscribe('Boyhagemann\Admin\Subscriber\AddUniqueRuleToResource');
 
 /**
  * Content hooks
@@ -55,17 +56,6 @@ Event::subscribe('Boyhagemann\Text\Subscriber\AddTextDirectlyFromSection');
 
 
 
-Event::listen('crud::saved', function($model, $controller) {
-
-	if(!$controller instanceof ResourceController) {
-		return;
-	}
-
-	// Resource controller is unique, but can update itself, allow its id
-	$model->rules['controller'] .= ',' . $model->id;
-	$model->save();
-
-});
 
 Event::listen('user.permissions', function(Boyhagemann\User\PermissionRepository $repository) {
 
@@ -76,13 +66,5 @@ Event::listen('user.permissions', function(Boyhagemann\User\PermissionRepository
 	$repository->setPermissions('Resource form', array(
 		'view.form.Boyhagemann\Admin\Controller\ResourceController.element.title' => 'Can view title element',
 	));
-
-
-});
-
-
-Event::listen('eloquent.query', function($sql) {
-
-
 
 });

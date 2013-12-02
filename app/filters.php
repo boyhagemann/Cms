@@ -1,7 +1,5 @@
 <?php
 
-use Boyhagemann\Content\Model\PageRepository;
-
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -35,25 +33,7 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function($route)
-{
-    $page = $route->getOption('page');
-    $user = Sentry::getUser();
-
-    // Fake a guest user when user is not logged in
-    if(!$user) {
-        $user = Sentry::findUserByCredentials(array('email' => 'guest'));
-    }
-    
-    // Check if the user has permission
-    $hasAccess = $user->hasAccess('view.page.' . $page->alias);
-    
-    // User is not logged in yet
-    if (!$hasAccess && $user->email == 'guest') return Redirect::route('user.login');
-    
-    // User has no rights
-	if (!$hasAccess) return Redirect::route('user.login');
-});
+Route::filter('auth', 'Boyhagemann\User\Filter\AuthFilter');
 
 
 Route::filter('auth.basic', function()
@@ -96,17 +76,16 @@ Route::filter('csrf', function()
 	}
 });
 
+/*
+|--------------------------------------------------------------------------
+| Display Content Blocks Filter
+|--------------------------------------------------------------------------
+|
+| This filter is responsible for dispatching the right content blocks on a
+| page. You can activate this filter using as follows in routes.php:
+|
+| Route::when('*', 'content');
+|
+*/
 
-
-
-Route::filter('content', function(Illuminate\Routing\Route $route) {
-
-	$alias 	= Route::currentRouteName();
-	$method = Str::lower(Request::getMethod());
-	$page 	= PageRepository::findPageByAliasAndMethod($alias, $method);
-
-	if($page) {
-		return App::make('DeSmart\Layout\Layout')->dispatch('Boyhagemann\Content\Controller\DispatchController@renderPage', compact('page'));
-	}
-
-});
+Route::filter('content', 'Boyhagemann\Content\Filter\DispatchPageContentBlocksFilter');

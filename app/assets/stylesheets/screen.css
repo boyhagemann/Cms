@@ -8,12 +8,14 @@ body {
 .admin-navbar {
     margin-top: 30px;
 }
-
+.dashboard__item {
+	margin-bottom: 10px;
+}
 .dashboard__item:first-child {
     margin-top: 15px;
 }
 
-.dashboard__item:nth-child(5n) {
+.dashboard__item:nth-child(4n+1) {
     clear: left;
 }
 
