@@ -47,6 +47,7 @@ Event::subscribe('Boyhagemann\Pages\Subscriber\SetPermissionsForViewingPage');
 /**
  * Form hooks
  */
+Event::subscribe('Boyhagemann\Form\Subscriber\FillFormWithErrorsFromSession');
 Event::subscribe('Boyhagemann\Form\Subscriber\SaveFormStateInSession');
 
 /**

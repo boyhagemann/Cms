@@ -115,7 +115,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
+//        'Barryvdh\Debugbar\ServiceProvider',
 
         
 		'Boyhagemann\User\UserServiceProvider',
