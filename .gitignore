@@ -3,6 +3,7 @@
 /public/builds
 /workbench
 /app/config/local
+/app/config/production
 composer.phar
 composer.lock
 .DS_Store
