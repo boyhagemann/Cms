@@ -45,14 +45,6 @@ return array(
 			)
 		),
 		array(
-			'color' => '#FF6900',
-			'match' => array(
-				'alias' => array(
-					'home'
-				),
-			)
-		),
-		array(
 			'color' => '#C4A029',
 			'match' => array(
 				'alias' => array(
@@ -76,12 +68,34 @@ return array(
 				),
 			)
 		),
+		array(
+			'color' => '#FF6900',
+			'match' => array(
+				'alias' => array(
+					'admin.index'
+				),
+			)
+		),
+		array(
+			'color' => '#F74FBF',
+			'match' => array(
+				'alias' => array(
+					'admin.resource.*'
+				),
+			)
+		),
 	),
 	'favorites' => array(
 		array(
 			'match' => array(
 				'alias' => array(
-					'home'
+					'admin.index',
+					'admin.page.index',
+					'admin.layout.index',
+					'admin.resource.index',
+					'admin.page.create',
+					'user.permissions',
+					'admin.dashboard-app.index',
 				),
 			)
 		),
