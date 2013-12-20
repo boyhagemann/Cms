@@ -69,7 +69,8 @@ return array(
 			)
 		),
 		array(
-			'color' => '#FF6900',
+			'color' => '#444444',
+			'icon_class' => 'icon-home',
 			'match' => array(
 				'alias' => array(
 					'admin.index'

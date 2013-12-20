@@ -1,5 +1,4 @@
 body {
-	padding-top: 50px;
 	padding-bottom: 70px;
 }
 
@@ -24,7 +23,7 @@ body {
     color: #fff;
 	height: 40px;
 	width: 40px;
-	line-height: 40px;
+	line-height: 44px;
 	text-align: center;
 }
 .dashboard__link {
@@ -64,6 +63,10 @@ body {
 }
 
 
+.content_toolbar {
+	background: none;
+}
+
 
 
 .nav-favorites__link:hover {
@@ -79,13 +82,22 @@ body {
 	z-index: 2000;
 	left: 10px;
 	top: 10px;
+	display: none;
 }
 #favorites {
 	background-color: rgba(0,0,0,0.9);
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 70px;
+	overflow: hidden;
 }
 .page_favorites {
 	list-style: none;
-	padding: 60px 20px 0 20px;
+	padding: 10px 15px 0;
+	overflow: hidden;
+	width: 400px;
 }
 .page_favorites__item {
 	vertical-align: middle;
@@ -107,10 +119,10 @@ body {
 	color: #fff;
 	height: 40px;
 	width: 40px;
-	line-height: 40px;
+	line-height: 44px;
 	text-align: center;
 	vertical-align: middle;
-	margin-right: 10px;
+	margin-right: 12px;
 }
 
 .text-modal {
@@ -122,4 +134,8 @@ body {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
+}
+
+.mm-menu {
+	display: block;
 }
