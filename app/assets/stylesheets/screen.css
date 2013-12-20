@@ -66,6 +66,13 @@ body {
 
 
 
+.nav-favorites__link:hover {
+	text-decoration: none;
+}
+.nav-favorites__icon {
+	font-size: 30px;
+	color: #ccc;
+}
 
 #nav-favorites {
 	position: fixed;
@@ -76,8 +83,33 @@ body {
 #favorites {
 	background-color: rgba(0,0,0,0.9);
 }
-#favorites a {
+.page_favorites {
+	list-style: none;
+	padding: 60px 20px 0 20px;
+}
+.page_favorites__item {
+	vertical-align: middle;
+	padding: 0;
+	margin: 10px 0;
+}
+.page_favorites__link {
 	color: #999;
+	line-height: 40px;
+	height: 40px;
+}
+.page_favorites__link:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.page_favorites__icon {
+	display: inline-block;
+	font-size: 25px;
+	color: #fff;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .text-modal {

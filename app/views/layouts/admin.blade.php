@@ -30,7 +30,7 @@
 <body>
 
 	<nav id="nav-favorites">
-		<a href="#favorites">Menu</a>
+		<a href="#favorites" class="nav-favorites__link"><i class="nav-favorites__icon icon icon-reorder"></i></a>
 	</nav>
 
 	<div>
