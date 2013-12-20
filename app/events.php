@@ -11,7 +11,7 @@ Event::subscribe('Boyhagemann\Model\Subscriber\GenerateModelAndRepository');
 /**
  * Crud hooks
  */
-Event::subscribe('Boyhagemann\Crud\Subscriber\BuildModelWhenFormIsReady');
+//Event::subscribe('Boyhagemann\Crud\Subscriber\BuildModelWhenFormIsReady');
 
 /**
  * Admin hooks

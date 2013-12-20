@@ -11,5 +11,6 @@
  *
  *= require bootstrap.min.css
  *= require font-awesome.css
+ *= require jquery.mmenu.all.css
  *= require_tree .
  */

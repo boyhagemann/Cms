@@ -11,7 +11,7 @@ return array(
 	| routes for our package
 	|
 	*/
-	'defaults' => array(
+	'preferences' => array(
 		array(
 			'icon_class' => 'icon-plus',
 			'match' => array(
@@ -45,6 +45,14 @@ return array(
 			)
 		),
 		array(
+			'color' => '#FF6900',
+			'match' => array(
+				'alias' => array(
+					'home'
+				),
+			)
+		),
+		array(
 			'color' => '#C4A029',
 			'match' => array(
 				'alias' => array(
@@ -65,6 +73,15 @@ return array(
 			'match' => array(
 				'alias' => array(
 					'user.*'
+				),
+			)
+		),
+	),
+	'favorites' => array(
+		array(
+			'match' => array(
+				'alias' => array(
+					'home'
 				),
 			)
 		),

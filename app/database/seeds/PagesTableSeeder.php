@@ -79,6 +79,11 @@ class PagesTableSeeder extends Seeder {
 			'section_id'    => SectionsTableSeeder::TOP,
 		));
 
+		Content::create(array(
+			'controller'    => 'Boyhagemann\Admin\Controller\NavigationController@favorites',
+			'layout_id'     => LayoutsTableSeeder::ID_ADMIN,
+			'section_id'    => SectionsTableSeeder::FAVORITES,
+		));
 
 	}
 

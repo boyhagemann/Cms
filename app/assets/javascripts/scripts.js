@@ -1,5 +1,11 @@
 
 
+
+$("#favorites").mmenu({
+	zposition: "front"
+});
+
+
 $('.wysiwyg').wysiwyg();
 
 
@@ -39,7 +45,5 @@ $('.wysiwyg').each(function(e) {
 			})
 
 	});
-
-	console.log('ta');
 
 })

@@ -18,6 +18,7 @@ class CreatePageFavoriteTable extends Migration {
 			$table->timestamps();
 			$table->integer('user_id');
 			$table->integer('page_id');
+			$table->text('params');
 			$table->integer('order');
 
 			$table->index('user_id');

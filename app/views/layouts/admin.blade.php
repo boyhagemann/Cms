@@ -28,59 +28,74 @@
 </head>
 
 <body>
-    
-<nav class="navbar navbar-fixed-top" role="navigation">
-	<div class="container">        
-        <div class="col-lg-12">
-            {{ $top }}
-        </div>
+
+	<nav id="nav-favorites">
+		<a href="#favorites">Menu</a>
+	</nav>
+
+	<div>
+
+
+		@if(1 == 2)
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="col-lg-12">
+					{{ $top }}
+				</div>
+			</div>
+		</nav>
+		@endif
+
+		@if($jumbotron)
+		<div class="jumbotron">
+			<div class="container">
+				{{ $jumbotron }}
+			</div>
+		</div>
+		@endif
+
+
+		<!-- Container -->
+		<div class="container">
+
+			@if($navbar)
+			<div class="row admin-navbar">
+				<div class="col-lg-12">
+					{{ $navbar }}
+				</div>
+			</div>
+			@endif
+
+			<!-- Notifications -->
+			@include('notifications')
+			<!-- ./ notifications -->
+
+			<div class="row">
+
+				@if($sidebar)
+				<div class="col-lg-9">{{ $content }}</div>
+				<div class="col-lg-3">{{ $sidebar }}</div>
+				@else
+				<div class="col-lg-12">{{ $content }}</div>
+				@endif
+			</div>
+
+
+		</div>
+
+		<!-- ./ container -->
+
+		<nav id="favorites">
+			{{ $favorites }}
+		</nav>
+
+		{{ $tools }}
+
+		<!-- Javascripts
+		================================================== -->
+		{{ javascript_include_tag() }}
+
 	</div>
-</nav>
-
-@if($jumbotron)
-<div class="jumbotron">
-    <div class="container">
-        {{ $jumbotron }}
-    </div>
-</div>
-@endif
-    
-    
-<!-- Container -->
-<div class="container">
-
-        @if($navbar)
-	<div class="row admin-navbar">            
-            <div class="col-lg-12">
-                {{ $navbar }}
-            </div>
-	</div>
-        @endif
-
-	<!-- Notifications -->
-	@include('notifications')
-	<!-- ./ notifications -->
-
-	<div class="row">
-
-            @if($sidebar)
-		<div class="col-lg-9">{{ $content }}</div>
-		<div class="col-lg-3">{{ $sidebar }}</div>
-            @else
-		<div class="col-lg-12">{{ $content }}</div>
-            @endif
-	</div>
-
-
-</div>
-
-<!-- ./ container -->
-
-{{ $tools }}
-
-<!-- Javascripts
-================================================== -->
-{{ javascript_include_tag() }}
 
 </body>
 </html>

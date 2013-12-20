@@ -66,6 +66,20 @@ body {
 
 
 
+
+#nav-favorites {
+	position: fixed;
+	z-index: 2000;
+	left: 10px;
+	top: 10px;
+}
+#favorites {
+	background-color: rgba(0,0,0,0.9);
+}
+#favorites a {
+	color: #999;
+}
+
 .text-modal {
     width: 960px;
 }

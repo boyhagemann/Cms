@@ -10,6 +10,7 @@ class SectionsTableSeeder extends Seeder {
     const NAVBAR    = 4;
     const JUMBOTRON = 5;
     const TOP       = 6;
+    const FAVORITES = 7;
 
 	public function run()
 	{
@@ -49,11 +50,18 @@ class SectionsTableSeeder extends Seeder {
 			'name' => 'jumbotron',
 			'mode' => Section::MODE_PROTECTED,
 		));
-        
+
 		Section::create(array(
 			'id' => self::TOP,
 			'title' => 'Top',
 			'name' => 'top',
+			'mode' => Section::MODE_PROTECTED,
+		));
+
+		Section::create(array(
+			'id' => self::FAVORITES,
+			'title' => 'Favorites',
+			'name' => 'favorites',
 			'mode' => Section::MODE_PROTECTED,
 		));
 	}

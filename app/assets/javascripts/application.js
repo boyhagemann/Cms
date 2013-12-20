@@ -15,4 +15,5 @@
 //= require jquery.sortable.js
 //= require bootstrap.min.js
 //= require bootstrap-wysiwyg.js
+//= require jquery.mmenu.min.all.js
 //= require_tree .
