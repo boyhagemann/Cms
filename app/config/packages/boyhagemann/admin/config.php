@@ -1,96 +1,133 @@
 <?php
 
+
 return array(
 
-	/*
-	|--------------------------------------------------------------------------
-	| routing array
-	|--------------------------------------------------------------------------
-	|
-	| This is passed to the Route::group and allows us to group and filter the
-	| routes for our package
-	|
-	*/
 	'preferences' => array(
-		array(
-			'icon_class' => 'icon-plus',
-			'match' => array(
-				'alias' => array(
-					'*.create'
-				),
-			)
+		'unique' => array('page_id', 'user_id'),
+		'defaults' => array(
+			'page_id' => function($page) {
+				return $page->id;
+			},
 		),
-		array(
-			'icon_class' => 'icon-pencil',
-			'match' => array(
-				'alias' => array(
-					'*.edit'
+		'tags' => array('admin', 'guest'),
+		'match' => array(
+
+			array(
+				'property' => 'alias',
+				'endsWith' => '.create',
+				'provide' => array(
+					'icon_class' => 'icon-plus',
 				),
-			)
-		),
-		array(
-			'icon_class' => 'icon-th-list',
-			'match' => array(
-				'alias' => array(
-					'*.index'
+			),
+			array(
+				'property' => 'alias',
+				'endsWith' => '.edit',
+				'provide' => array(
+					'icon_class' => 'icon-pencil',
 				),
-			)
-		),
-		array(
-			'icon_class' => 'icon-lock',
-			'match' => array(
-				'alias' => array(
-					'*.permissions'
+			),
+			array(
+				'property' => 'alias',
+				'endsWith' => '.index',
+				'provide' => array(
+					'icon_class' => 'icon-th-list',
 				),
-			)
-		),
-		array(
-			'color' => '#C4A029',
-			'match' => array(
-				'alias' => array(
-					'admin.*'
+			),
+			array(
+				'property' => 'alias',
+				'endsWith' => '.permissions',
+				'provide' => array(
+					'icon_class' => 'icon-lock',
 				),
-			)
-		),
-		array(
-			'color' => '#49CC5F',
-			'match' => array(
-				'alias' => array(
-					'admin.page.*'
+			),
+			array(
+				'property' => 'alias',
+				'startsWith' => 'admin.',
+				'provide' => array(
+					'color' => '#C4A029',
 				),
-			)
-		),
-		array(
-			'color' => '#947BE0',
-			'match' => array(
-				'alias' => array(
-					'user.*'
+			),
+			array(
+				'property' => 'alias',
+				'startsWith' => 'admin.page.',
+				'provide' => array(
+					'color' => '#67AF2B',
 				),
-			)
-		),
-		array(
-			'color' => '#444444',
-			'icon_class' => 'icon-home',
-			'match' => array(
-				'alias' => array(
-					'admin.index'
+			),
+			array(
+				'property' => 'alias',
+				'startsWith' => 'admin.layout.',
+				'provide' => array(
+					'color' => '#61ADA7',
 				),
-			)
-		),
-		array(
-			'color' => '#F74FBF',
-			'match' => array(
-				'alias' => array(
-					'admin.resource.*'
+			),
+			array(
+				'property' => 'alias',
+				'startsWith' => 'admin.resource.',
+				'provide' => array(
+					'color' => '#E047C9',
 				),
-			)
+			),
+			array(
+				'property' => 'alias',
+				'startsWith' => 'user.',
+				'provide' => array(
+					'color' => '#947BE0',
+				),
+			),
+			array(
+				'property' => 'alias',
+				'equals' => 'admin.index',
+				'provide' => array(
+					'color' => '#444444',
+					'icon_class' => 'icon-home',
+				),
+			),
+			array(
+				'property' => 'alias',
+				'equals' => 'admin.content.switch',
+				'provide' => array(
+					'color' => '#444444',
+					'icon_class' => 'icon-eye-open',
+				),
+			),
+			array(
+				'property' => 'alias',
+				'equals' => 'user.logout',
+				'provide' => array(
+					'color' => '#444444',
+					'icon_class' => 'icon-unlock',
+				),
+			),
+
 		),
 	),
+
 	'favorites' => array(
-		array(
-			'match' => array(
-				'alias' => array(
-					'admin.index',
+		'defaults' => array(
+			'page_id' => function($page) {
+				return $page->id;
+			},
+		),
+		'match' => array(
+			array(
+				'property' => 'alias',
+				'equals' => 'admin.index',
+				'provide' => array(
+					'order' => 0,
+				)
+			),
+			array(
+				'property' => 'alias',
+				'equals' => 'admin.content.switch',
+				'provide' => array(
+					'order' => 1,
+				)
+			),
+			array(
+				'property' => 'alias',
+				'equals' => array(
 					'admin.page.index',
 					'admin.layout.index',
 					'admin.resource.index',
@@ -98,8 +135,18 @@ return array(
 					'user.permissions',
 					'admin.dashboard-app.index',
 				),
-			)
-		),
+				'provide' => array(
+					'order' => 2,
+				)
+			),
+			array(
+				'property' => 'alias',
+				'equals' => 'user.logout',
+				'provide' => array(
+					'order' => 3,
+				)
+			),
+		)
 	),
 
 );
