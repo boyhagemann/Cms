@@ -12,7 +12,7 @@ class ResourcesTableSeeder extends Seeder {
 			'title' => 'Resource',
             'description' => 'Here you can have all your resources that will contain data you can use in your application',
 			'controller' => 'Boyhagemann\Admin\Controller\ResourceController',
-		), null, '#00B351');
+		));
 
 		ResourceRepository::createWithPages(array(
 			'title' => 'Page',
@@ -36,6 +36,18 @@ class ResourcesTableSeeder extends Seeder {
 			'title' => 'Content',
             'description' => 'A combination of a block on a certain page in one section.',
 			'controller' => 'Boyhagemann\Content\Controller\ContentController',
+		));
+
+		ResourceRepository::createWithPages(array(
+			'title' => 'Users',
+            'description' => 'Manage users on the website',
+			'controller' => 'Boyhagemann\User\Controller\UserController',
+		));
+
+		ResourceRepository::createWithPages(array(
+			'title' => 'User groups',
+            'description' => 'Manage user groups on the website',
+			'controller' => 'Boyhagemann\User\Controller\GroupController',
 		));
 
 	}

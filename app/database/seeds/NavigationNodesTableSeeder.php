@@ -13,7 +13,6 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Dashboard Apps',
             'description' => 'Create shortcuts to pages that you use often.',
 			'page_id' => Page::whereAlias('admin.dashboard-app.index')->first()->id,
-			'icon_class' => 'icon-th',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
@@ -21,15 +20,20 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Pages',
             'description' => 'Manage all of your pages you created.',
 			'page_id' => Page::whereAlias('admin.page.index')->first()->id,
-			'icon_class' => 'icon-list-ul',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
 		Node::create(array(
-			'title' => 'Create page',
-            'description' => 'You can easily start a new page from here. Just enter the basis things and you are ready to go.',
-			'page_id' => Page::whereAlias('admin.page.create')->first()->id,
-			'icon_class' => 'icon-file',
+			'title' => 'Users',
+            'description' => 'Manage the users on your website.',
+			'page_id' => Page::whereAlias('admin.users.index')->first()->id,
+			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
+		));
+
+		Node::create(array(
+			'title' => 'User groups',
+            'description' => 'Manage the user groups on your website.',
+			'page_id' => Page::whereAlias('admin.user-groups.index')->first()->id,
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 
@@ -37,7 +41,6 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Create resource',
             'description' => 'If you want dynamic content on your website, this is a good way to start',
 			'page_id' => Page::whereAlias('admin.resource.create')->first()->id,
-			'icon_class' => 'icon-briefcase',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
         
@@ -45,7 +48,6 @@ class NavigationNodesTableSeeder extends Seeder {
 			'title' => 'Permissions',
             'description' => 'Control who can access, create or update resources or other permissions.',
 			'page_id' => Page::whereAlias('user.permissions')->first()->id,
-			'icon_class' => 'icon-briefcase',
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
 	}

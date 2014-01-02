@@ -1,8 +1,5 @@
 <?php
 
-use Boyhagemann\Admin\Controller\ResourceController;
-
-
 /**
  * Model hooks
  */

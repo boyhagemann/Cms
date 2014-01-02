@@ -71,9 +71,16 @@ return array(
 			),
 			array(
 				'property' => 'alias',
+				'startsWith' => 'admin.dashboard-app.',
+				'provide' => array(
+					'color' => '#7B5CA5',
+				),
+			),
+			array(
+				'property' => 'alias',
 				'startsWith' => 'user.',
 				'provide' => array(
-					'color' => '#947BE0',
+					'color' => '#ADC149',
 				),
 			),
 			array(
@@ -134,6 +141,7 @@ return array(
 					'admin.page.create',
 					'user.permissions',
 					'admin.dashboard-app.index',
+					'admin.users.index',
 				),
 				'provide' => array(
 					'order' => 2,
