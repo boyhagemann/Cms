@@ -50,6 +50,12 @@ class ResourcesTableSeeder extends Seeder {
 			'controller' => 'Boyhagemann\User\Controller\GroupController',
 		));
 
+		ResourceRepository::createWithPages(array(
+			'title' => 'Files',
+            'description' => 'Manage file uploads',
+			'controller' => 'Boyhagemann\Uploads\Controller\FileController',
+		));
+
 	}
 
 }

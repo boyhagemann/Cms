@@ -78,6 +78,13 @@ return array(
 			),
 			array(
 				'property' => 'alias',
+				'startsWith' => 'admin.files.',
+				'provide' => array(
+					'color' => '#6570A5',
+				),
+			),
+			array(
+				'property' => 'alias',
 				'startsWith' => 'user.',
 				'provide' => array(
 					'color' => '#ADC149',

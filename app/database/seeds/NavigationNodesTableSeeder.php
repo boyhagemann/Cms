@@ -50,6 +50,13 @@ class NavigationNodesTableSeeder extends Seeder {
 			'page_id' => Page::whereAlias('user.permissions')->first()->id,
 			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
 		));
+
+		Node::create(array(
+			'title' => 'Files',
+            'description' => 'Manage file uploads',
+			'page_id' => Page::whereAlias('admin.files.index')->first()->id,
+			'container_id' => NavigationContainersTableSeeder::DASHBOARD,
+		));
 	}
 
 }

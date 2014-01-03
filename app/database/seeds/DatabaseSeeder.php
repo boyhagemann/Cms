@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder {
 		 $this->call('BlocksTableSeeder');
 		 $this->call('NavigationContainersTableSeeder');
 		 $this->call('NavigationNodesTableSeeder');
+		 $this->call('FilesTableSeeder');
 		 $this->call('PagePreferenceTableSeeder');
 		 $this->call('PageFavoriteTableSeeder');
 	}

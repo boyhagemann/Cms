@@ -56,6 +56,11 @@ Event::subscribe('Boyhagemann\Text\Subscriber\AddTextDirectlyFromSection');
  */
 //Event::subscribe('Boyhagemann\User\Subscriber\CheckPermissionsForFormElements');
 
+/**
+ * Uploads hooks
+ */
+Event::subscribe('Boyhagemann\Uploads\Subscriber\EnableFormFileUploads');
+Event::subscribe('Boyhagemann\Uploads\Subscriber\SaveFileToDisk');
 
 
 

@@ -125,6 +125,7 @@ return array(
 		'Boyhagemann\Content\ContentServiceProvider',
 		'Boyhagemann\Text\TextServiceProvider',
 		'Boyhagemann\Navigation\NavigationServiceProvider',
+		'Boyhagemann\Uploads\UploadsServiceProvider',
 
 	),
 
