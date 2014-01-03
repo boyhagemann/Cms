@@ -4,6 +4,7 @@
  * Model hooks
  */
 Event::subscribe('Boyhagemann\Model\Subscriber\GenerateModelAndRepository');
+Event::subscribe('Boyhagemann\Model\Subscriber\SyncWithDatabase');
 
 /**
  * Crud hooks
@@ -45,6 +46,12 @@ Event::subscribe('Boyhagemann\Pages\Subscriber\SetPermissionsForViewingPage');
  */
 Event::subscribe('Boyhagemann\Form\Subscriber\FillFormWithErrorsFromSession');
 Event::subscribe('Boyhagemann\Form\Subscriber\SaveFormStateInSession');
+
+/**
+ * Overview hooks
+ */
+Event::subscribe('Boyhagemann\Overview\Subscriber\ConvertChoiceElementToString');
+Event::subscribe('Boyhagemann\Overview\Subscriber\ConvertImageElementToImage');
 
 /**
  * Text hooks
